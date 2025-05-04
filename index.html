@@ -1,26 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shyam-distro-showcase-hub</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shyam Distributor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the message box */
+        #message-box {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f0fdf4;
+            color: #15803d;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #16a34a;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        #message-box.show {
+            display: block;
+        }
 
-    <meta property="og:title" content="shyam-distro-showcase-hub" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        /* Hero section background image */
+        #home {
+            background-image: url('https://placehold.co/1920x600/EEE/31343C'); /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-inter">
+    <header class="bg-red-600 shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-semibold text-white">Shyam Distributor</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-red-300 text-white transition duration-300">Home</a></li>
+                    <li><a href="#about-us" class="hover:text-red-300 text-white transition duration-300">About Us</a></li>
+                    <li><a href="#services" class="hover:text-red-300 text-white transition duration-300">Services</a></li>
+                    <li><a href="#clients" class="hover:text-red-300 text-white transition duration-300">Our Clients</a></li>
+                    <li><a href="#contact-us" class="hover:text-red-300 text-white transition duration-300">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-white w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-600 focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-lg text-gray-800 hover:text-red-500 transition duration-300">Home</a></li>
+                    <li><a href="#about-us" class="block text-lg text-gray-800 hover:text-red-500 transition duration-300">About Us</a></li>
+                    <li><a href="#services" class="block text-lg text-gray-800 hover:text-red-500 transition duration-300">Services</a></li>
+                    <li><a href="#clients" class="block text-lg text-gray-800 hover:text-red-500 transition duration-300">Our Clients</a></li>
+                    <li><a href="#contact-us" class="block text-lg text-gray-800 hover:text-red-500 transition duration-300">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <main>
+        <section id="home" class="bg-gradient-to-br from-red-100 to-red-50 py-20 md:py-32 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-semibold text-red-700 mb-4">Trusted C&F Agent & Warehousing Partner in Rajasthan</h2>
+                <p class="text-xl md:text-2xl text-gray-800 mb-6">Enabling seamless pharmaceutical distribution with reliable carry and forwarding services across Rajasthan. Trusted by leading manufacturers for efficient, secure, and compliant logistics.</p>
+                <p class="text-lg text-gray-700 mb-8">We provide end-to-end distribution, inventory management, and warehousing solutions for pharmaceutical and allied industries. Based in Jaipur, we ensure reliable and compliant logistics throughout Rajasthan.</p>
+                <a href="#contact-us" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="about-us" class="bg-white py-20 md:py-32">
+            <div class="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-4">About Us</h2>
+                    <p class="text-gray-700 leading-relaxed">Shyam Distributor began its journey 40 years ago as a pharmaceutical wholesale business in Jaipur. Over time, our commitment to reliability and service excellence led us to evolve into a full-scale Carry and Forwarding (C&F) and warehousing partner.</p>
+                    <p class="text-gray-700 leading-relaxed mt-4">For the past 15 years, we've been the official C&F agent for over 20 leading pharmaceutical and healthcare companies, enabling seamless supply chain operations across Rajasthan.</p>
+                    <p class="text-gray-700 leading-relaxed mt-4">With a centrally located warehouse, dedicated team, and strong logistics coordination, we ensure regulatory compliance, stock transparency, and timely deliveries - making us the trusted distribution hub for manufacturers looking to scale in the region.</p>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="About Us" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <section id="journey-summary" class="bg-gray-100 py-20 md:py-32">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-3xl font-semibold text-red-600">40+</h3>
+                    <p class="text-gray-700 text-lg">Years In Business</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-3xl font-semibold text-red-600">20+</h3>
+                    <p class="text-gray-700 text-lg">Happy Clients</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-3xl font-semibold text-red-600">15+</h3>
+                    <p class="text-gray-700 text-lg">Years of C&F Expertise</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-3xl font-semibold text-red-600">100+</h3>
+                    <p class="text-gray-700 text-lg">Trained Staff</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-gray-100 py-20 md:py-32">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-8 text-center">Our Services</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="https://placehold.co/400x200/EEE/31343C" alt="C&F" class="rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-red-600 mb-2">Carry and Forwarding (C&F)</h3>
+                        <p class="text-gray-700">We act as an extended distribution arm for manufacturing companies, handling inventory, order processing, and delivery operations in Rajasthan.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="https://placehold.co/400x200/EEE/31343C" alt="Warehousing" class="rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-red-600 mb-2">Warehousing & Storage</h3>
+                        <p class="text-gray-700">Secure, compliant storage facility with inventory control, batch tracking, and cold-chain support (if applicable).</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="https://placehold.co/400x200/EEE/31343C" alt="Order Fulfilment" class="rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-red-600 mb-2">Order Fulfilment</h3>
+                        <p class="text-gray-700">Timely dispatches, stock reconciliation, and detailed reporting for full supply chain visibility.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                        <img src="https://placehold.co/400x200/EEE/31343C" alt="Logistics" class="rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-red-600 mb-2">Logistics Coordination</h3>
+                        <p class="text-gray-700">Coordinating with transporters and clients to ensure safe and timely product movement.</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-center mt-8">We offer end-to-end services tailored for pharmaceutical and allied industry clients. Currently managing C&F operations for 20+ companies, our services are built around reliability, scale, and compliance.</p>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="bg-white py-20 md:py-32">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-8 text-center">Why Choose Us</h2>
+                <ul class="list-none space-y-4">
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <span class="text-gray-700 text-lg">40+ years of industry experience</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <span class="text-gray-700 text-lg">15+ years of C&F specialization</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <span class="text-gray-700 text-lg">Trusted by 20+ pharmaceutical manufacturers</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <span class="text-gray-700 text-lg">Centrally located warehouse in Jaipur</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-500 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <span class="text-gray-700 text-lg">Transparent processes and timely delivery</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="clients" class="bg-gray-100 py-20 md:py-32">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-8 text-center">Our Clients</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/150x80/EEE/31343C" alt="Client Logo" class="mx-auto">
+                        <p class="text-gray-600 mt-2">Client 1</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/150x80/EEE/31343C" alt="Client Logo" class="mx-auto">
+                        <p class="text-gray-600 mt-2">Client 2</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/150x80/EEE/31343C" alt="Client Logo" class="mx-auto">
+                        <p class="text-gray-600 mt-2">Client 3</p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <span class="inline-block h-2 w-2 rounded-full bg-red-600 mr-2"></span>
+                    <span class="inline-block h-2 w-2 rounded-full bg-gray-300 mr-2"></span>
+                    <span class="inline-block h-2 w-2 rounded-full bg-gray-300 mr-2"></span>
+                    <span class="inline-block h-2 w-2 rounded-full bg-gray-300 mr-2"></span>
+                    <span class="inline-block h-2 w-2 rounded-full bg-gray-300"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="bg-white py-20 md:py-32">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-8 text-center">Client Testimonials</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6 shadow-md">
+                        <p class="text-gray-700 italic mb-4">"Shyam Distributor has been our trusted partner for over a decade, ensuring smooth and compliant distribution across Rajasthan."</p>
+                        <p class="font-semibold text-red-600">- [Client Name, Company]</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 shadow-md">
+                        <p class="text-gray-700 italic mb-4">"Their warehousing and logistics expertise have significantly streamlined our supply chain operations."</p>
+                        <p class="font-semibold text-red-600">- [Client Name, Company]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us" class="bg-dark-900 py-20 md:py-32 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-8">Contact Us</h2>
+                <p class="text-black text-lg mb-4">Phone: +91 XXXXX XXXXX</p>
+                <p class="text-black text-lg mb-4">Email: info@shyamdistributor.com</p>
+                <p class="text-black text-lg">Address: Jaipur, Rajasthan</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-300">
+            <p>&copy; 2024 Shyam Distributor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="message-box" class="hidden"></div>
+
+    <script>
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        const navLinks = document.querySelectorAll('header nav ul li a');
+        const sections = document.querySelectorAll('section');
+
+        function showMessage(message, type = 'success') {
+            const messageBox = document.getElementById('message-box');
+            messageBox.textContent = message;
+            messageBox.className = `fixed top-4 left-1/2 transform -translate-x-1/2 bg-${type === 'success' ? 'green' : 'red'}-100 text-${type === 'success' ? 'green' : 'red'}-700 border border-${type === 'success' ? 'green' : 'red'}-400 px-4 py-2 rounded shadow-md z-50`;
+            messageBox.classList.add('show');
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+        }
+
+        hamburgerBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("hidden");
+            document.body.classList.add('overflow-hidden');
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            document.body.classList.remove('overflow-hidden');
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                mobileMenu.classList.add("hidden");
+                document.body.classList.remove('overflow-hidden');
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
