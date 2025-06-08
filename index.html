@@ -6,8 +6,7 @@
     <title>Shyam Distributor - C&F Agent & Warehousing in Rajasthan</title>
     <meta name="description" content="Trusted C&F Agent and warehousing partner in Jaipur, Rajasthan, offering end-to-end distribution, inventory management, and logistics for pharmaceutical and allied industries for 40+ years.">
     <link rel="icon" href="https://github.com/jgupta22/shyam_distributors/raw/main/images/shyam_favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/path/to/your/apple-touch-icon.png"> <!-- Optional: For Apple devices -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/path/to/your/apple-touch-icon.png"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
@@ -76,6 +75,78 @@
         .client-swiper .swiper-pagination-bullet-active {
             background-color: #cb4154; /* Your primary red color */
         }
+
+        /* Gallery Styles */
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #CBD5E0; /* Tailwind gray-400 */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .gallery-dot.active-dot {
+            background-color: #cb4154; /* Your primary red color */
+        }
+        .gallery-page.active-page {
+            display: grid;
+        }
+        .gallery-item img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Gallery Modal Styles */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .gallery-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        .gallery-modal-content img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .gallery-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            line-height: 1;
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-inter antialiased">
@@ -88,6 +159,7 @@
                     <li><a href="#about-us" class="text-white transition duration-300">About Us</a></li>
                     <li><a href="#services" class="text-white transition duration-300">Services</a></li>
                     <li><a href="#clients" class="text-white transition duration-300">Our Clients</a></li>
+                    <li><a href="#gallery" class="text-white transition duration-300">Gallery</a></li>
                     <li><a href="#contact-us" class="text-white transition duration-300">Contact Us</a></li>
                 </ul>
             </nav>
@@ -114,6 +186,7 @@
                     <li><a href="#about-us" class="block text-lg text-gray-800 transition duration-300">About Us</a></li>
                     <li><a href="#services" class="block text-lg text-gray-800 transition duration-300">Services</a></li>
                     <li><a href="#clients" class="block text-lg text-gray-800 transition duration-300">Our Clients</a></li>
+                    <li><a href="#gallery" class="block text-lg text-gray-800 transition duration-300">Gallery</a></li>
                     <li><a href="#contact-us" class="block text-lg text-gray-800 transition duration-300">Contact Us</a></li>
                 </ul>
             </nav>
@@ -198,6 +271,12 @@
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                             </svg>
+                            <span class="text-gray-700 text-lg"><strong>55,000 sq ft of warehouse space:</strong> State-of-the-art infrastructure to meet diverse storage needs.</span>
+                        </li>
+                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
                             <span class="text-gray-700 text-lg"><strong>40+ years of industry experience:</strong> Deep understanding of the pharmaceutical and distribution landscape.</span>
                         </li>
                         <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
@@ -262,24 +341,65 @@
                             <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/Xenium.png" alt="Xenium Biocorp Logo" class="mx-auto h-20 object-contain mb-3">
                             <p class="text-gray-600 font-medium">Xenium Biocorp</p>
                         </div>
-                        <!-- Add more client slides here if you have them -->
-                        <!-- Example:
-                        <div class="swiper-slide text-center">
-                            <img src="URL_TO_LOGO_6" alt="Client 6 Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Client Name 6</p>
-                        </div>
-                        -->
                     </div>
-                    <!-- Navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-                    <!-- Pagination -->
                     <div class="swiper-pagination mt-8"></div>
                 </div>
             </div>
         </section>
+        
+        <section id="gallery" class="bg-gray-50 py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-6 text-center">Our Warehouse & Facilities</h2>
+                <p class="text-gray-700 text-center mb-12 text-lg max-w-3xl mx-auto">
+                    A glimpse into our secure, compliant, and centrally located warehousing facilities in Jaipur.
+                </p>
 
-        <section id="testimonials" class="bg-gray-50 py-16 md:py-24">
+                <div id="gallery-page-1" class="gallery-page active-page grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office1.jpg" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office4.jpg" alt="Warehouse Image 2" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office5.jpg" alt="Warehouse Image 3" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                </div>
+
+                <div id="gallery-page-2" class="gallery-page hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/outside1.jpg" alt="Warehouse Image 4" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office2.jpg" alt="Warehouse Image 5" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office3.jpg" alt="Warehouse Image 6" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                </div>
+                
+                <div id="gallery-page-3" class="gallery-page hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office_sh1.jpg" alt="Warehouse Image 7" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/IMG_9402.jpg" alt="Warehouse Image 8" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/IMG_9407.jpg" alt="Warehouse Image 9" class="w-full h-72 object-cover gallery-image">
+                    </div>
+                </div>
+
+                <div id="gallery-dots-container" class="flex justify-center space-x-3 mt-8">
+                    <button class="gallery-dot active-dot" data-page="1" aria-label="Go to gallery page 1"></button>
+                    <button class="gallery-dot" data-page="2" aria-label="Go to gallery page 2"></button>
+                    <button class="gallery-dot" data-page="3" aria-label="Go to gallery page 3"></button>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="bg-white py-16 md:py-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-12 text-center">What Our Clients Say</h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -317,10 +437,14 @@
             <p class="text-sm mt-1">Designed with care.</p>
         </div>
     </footer>
-
-    <div id="message-box"></div> <!-- Message box for notifications -->
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <div id="galleryModal" class="gallery-modal">
+        <span class="gallery-modal-close" id="galleryModalClose">&times;</span>
+        <div class="gallery-modal-content">
+            <img src="" alt="Enlarged Warehouse Image" id="modalImage">
+        </div>
+    </div>
+    <div id="message-box"></div> <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         // Mobile Menu Toggle
         const hamburgerBtn = document.getElementById("hamburger-btn");
@@ -342,11 +466,9 @@
             link.addEventListener("click", () => {
                 mobileMenu.classList.add("hidden");
                 document.body.classList.remove('overflow-hidden');
-                // Smooth scroll handled by the generic anchor click listener below
             });
         });
 
-        // Close mobile menu if clicked outside
         document.addEventListener('click', (event) => {
             if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
                 mobileMenu.classList.add("hidden");
@@ -361,8 +483,7 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Calculate offset for sticky header if you have one
-                    const headerOffset = document.querySelector('header').offsetHeight || 70; // Adjust if header height changes
+                    const headerOffset = document.querySelector('header').offsetHeight || 70; 
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -375,12 +496,12 @@
         });
 
         // Active Nav Link Highlighting on Scroll
-        const sections = document.querySelectorAll('section[id]'); // Ensure sections have IDs
+        const sections = document.querySelectorAll('section[id]');
         const allNavLinks = document.querySelectorAll('header nav ul li a, #mobile-menu nav ul li a');
 
         function updateActiveNavLink() {
             let currentSectionId = '';
-            let fromTop = window.scrollY + (document.querySelector('header').offsetHeight || 70) + 50; // Offset for header and a bit more
+            let fromTop = window.scrollY + (document.querySelector('header').offsetHeight || 70) + 50; 
 
             sections.forEach(section => {
                 if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
@@ -388,11 +509,9 @@
                 }
             });
             
-            // If no section is "active" (e.g. at the very bottom of page past last section), keep last one active or clear all
-             if (currentSectionId === '' && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // Check if near bottom
+             if (currentSectionId === '' && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
                 currentSectionId = sections[sections.length - 1].getAttribute('id');
             }
-
 
             allNavLinks.forEach(link => {
                 link.classList.remove('active');
@@ -402,29 +521,27 @@
             });
         }
         window.addEventListener('scroll', updateActiveNavLink);
-        window.addEventListener('load', updateActiveNavLink); // Also run on load
+        window.addEventListener('load', updateActiveNavLink);
 
-        // Show Message Function (Example Usage)
+        // Show Message Function
         function showMessage(message, type = 'success') {
             const messageBox = document.getElementById('message-box');
             messageBox.textContent = message;
             
-            // Clear previous styles
-            messageBox.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 p-4 rounded-md shadow-lg z-50'; // Base classes
+            messageBox.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 p-4 rounded-md shadow-lg z-50';
 
             if (type === 'success') {
                 messageBox.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-400');
-            } else { // Assuming 'error' or other failure types
+            } else {
                 messageBox.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-400');
             }
             
-            messageBox.style.display = 'block'; // Show the message box
+            messageBox.style.display = 'block';
 
             setTimeout(() => {
-                messageBox.style.display = 'none'; // Hide after 3 seconds
+                messageBox.style.display = 'none';
             }, 3000);
         }
-        // Example: showMessage("Welcome to our site!", "success"); // Uncomment to test
 
         // Initialize Swiper for Clients
         const clientSwiper = new Swiper('.client-swiper', {
@@ -450,11 +567,76 @@
                     spaceBetween: 40
                 }
             },
-            autoplay: { // Optional: Autoplay
+            autoplay: {
                delay: 4000,
                disableOnInteraction: false,
             },
         });
+
+        // NEW GALLERY SCRIPT START
+        const galleryDotsContainer = document.getElementById('gallery-dots-container');
+        if (galleryDotsContainer) {
+            const galleryDots = galleryDotsContainer.querySelectorAll('.gallery-dot');
+            const galleryPages = [
+                document.getElementById('gallery-page-1'),
+                document.getElementById('gallery-page-2'),
+                document.getElementById('gallery-page-3')
+            ].filter(page => page !== null);
+
+            galleryDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const pageNumber = dot.dataset.page;
+                    galleryDots.forEach(d => d.classList.remove('active-dot'));
+                    galleryPages.forEach(p => {
+                        if (p) {
+                            p.classList.add('hidden');
+                            p.classList.remove('active-page', 'grid');
+                        }
+                    });
+                    dot.classList.add('active-dot');
+                    const targetPage = document.getElementById(`gallery-page-${pageNumber}`);
+                    if (targetPage) {
+                        targetPage.classList.remove('hidden');
+                        targetPage.classList.add('active-page', 'grid');
+                    }
+                });
+            });
+        }
+        
+        // Gallery Modal Logic
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        const modal = document.getElementById('galleryModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModalButton = document.getElementById('galleryModalClose');
+
+        if (modal && modalImage && closeModalButton) {
+            galleryImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    modalImage.src = image.src;
+                    modalImage.alt = image.alt;
+                    modal.classList.add('active');
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+            };
+
+            closeModalButton.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        }
+        // NEW GALLERY SCRIPT END
 
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
