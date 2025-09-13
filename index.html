@@ -148,6 +148,7 @@
             line-height: 1;
         }
     </style>
+   
 </head>
 <body class="bg-gray-100 font-inter antialiased">
     <header class="bg-red-600 shadow-md py-4 sticky top-0 z-40">
@@ -641,5 +642,43 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+     <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Shyam Distributor",
+          "image": "https://github.com/jgupta22/shyam_distributors/raw/main/images/office/outside1.jpg", /* Replace with your best facility image URL */
+          "url": "https://yourwebsite.com", /* Replace with your actual domain when you get one */
+          "telephone": "+919414084999",
+          "email": "shyam_distributor@yahoo.co.in",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C, 182, D 1, Road 9F, VKI",
+            "addressLocality": "Jaipur",
+            "addressRegion": "Rajasthan",
+            "postalCode": "302013", /* Add your pincode */
+            "addressCountry": "IN"
+          },
+          "description": "Trusted C&F Agent and warehousing partner in Jaipur, Rajasthan, offering distribution, inventory management, and logistics for pharmaceutical and kitchen appliance industries.",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            /* Add links to your social media profiles here, e.g., LinkedIn, if you have them */
+          ] 
+        }
+        </script>
 </body>
 </html>
