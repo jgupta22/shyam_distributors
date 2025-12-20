@@ -1,684 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyam Distributor - C&F Agent & Warehousing in Rajasthan</title>
-    <meta name="description" content="Trusted C&F Agent and warehousing partner in Jaipur, Rajasthan, offering end-to-end distribution, inventory management, and logistics for pharmaceutical and allied industries for 40+ years.">
-    <link rel="icon" href="https://github.com/jgupta22/shyam_distributors/raw/main/images/shyam_favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/path/to/your/apple-touch-icon.png"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        /* Custom styles */
-        #message-box {
-            display: none; /* Initially hidden, controlled by JS */
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 16px; /* Tailwind: p-4 */
-            border-radius: 6px; /* Tailwind: rounded-md */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tailwind: shadow-md */
-            z-index: 50; /* Ensure it's on top */
-        }
-        /* Removed background-color, color, border from here as JS will handle it */
+  <title>C&F & Warehousing Partner in Rajasthan | Shyam Distributors</title>
+  <meta name="description" content="Shyam Distributors is a trusted C&F and warehousing partner for nation wide manufacturers. 65,000 sq ft pharma-ready warehouse with operational cold chain in VKI Jaipur, serving Rajasthan and inter-state routes." />
+  <meta name="robots" content="index, follow" />
 
-        /* Hero section background image */
-        #home {
-            background-image: url('https://github.com/jgupta22/shyam_distributors/raw/main/images/shyamtitleimage.avif');
-            background-size: cover;
-            background-position: center;
-        }
-        #home .container {
-            background-color: rgba(0, 0, 0, 0.55); /* Slightly darker overlay for better text contrast */
-            padding: 20px;
-            border-radius: 10px;
-        }
-        #home .container h2,
-        #home .container p {
-            font-weight: 600;
-            color: white; /* Ensure text is white */
-        }
-        #home .container a {
-            font-weight: 600;
-        }
+  <!-- ===== SCHEMA MARKUP ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://shyamdistributor.com/#localbusiness",
+    "name": "Shyam Distributors",
+    "url": "https://shyamdistributor.com",
+    "telephone": "+91-94140-84999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "VKI Industrial Area",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302013",
+      "addressCountry": "IN"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Rajasthan" },
+      { "@type": "Country", "name": "India" }
+    ],
+    "description": "Shyam Distributors is a C&F agent and warehousing partner for nation wide manufacturers, operating a 65,000 sq ft pharma-ready warehouse with operational cold chain in VKI Industrial Area, Jaipur.",
+    "foundingDate": "1980",
+    "sameAs": [
+      "https://share.google/UuOeTz2oxAoA4ey74"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Carry and Forward (C&F) Services" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Pharma Warehousing and Cold Chain Distribution" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Super Stockist and Distribution Support" }
+      }
+    ]
+  }
+  </script>
 
-        /* Active Nav Link Styling */
-        header nav ul li a.active,
-        header nav ul li a:hover { /* Combined hover for visual consistency */
-            color: #fca5a5; /* Tailwind red-300 or similar light red */
-        }
-        #mobile-menu nav ul li a.active,
-        #mobile-menu nav ul li a:hover {
-            color: #ef4444; /* Tailwind red-500 */
-            font-weight: 600;
-        }
+  <style>
+    :root {
+      --primary: #0a2540;
+      --accent: #1aa6a6;
+      --bg: #f7f9fc;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #eef2f7;
+    }
 
-        /* Swiper JS Customizations */
-        .client-swiper .swiper-button-next,
-        .client-swiper .swiper-button-prev {
-            color: #cb4154; /* Your primary red color */
-            --swiper-navigation-size: 30px; /* Adjust size if needed */
-        }
-        .client-swiper .swiper-button-next:after,
-        .client-swiper .swiper-button-prev:after {
-           font-size: 20px !important; /* Adjust icon size if needed */
-        }
+    * { box-sizing: border-box; }
 
-        .client-swiper .swiper-pagination {
-            position: relative;
-            bottom: auto;
-        }
-        .client-swiper .swiper-pagination-bullet-active {
-            background-color: #cb4154; /* Your primary red color */
-        }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #ffffff;
+    }
 
-        /* Gallery Styles */
-        .gallery-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #CBD5E0; /* Tailwind gray-400 */
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .gallery-dot.active-dot {
-            background-color: #cb4154; /* Your primary red color */
-        }
-        .gallery-page.active-page {
-            display: grid;
-        }
-        .gallery-item img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .gallery-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        
-        /* Gallery Modal Styles */
-        .gallery-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .gallery-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .gallery-modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            position: relative;
-        }
-        .gallery-modal-content img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .gallery-modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0px;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 5px 10px;
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 50%;
-            line-height: 1;
-        }
-    </style>
-   
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    h1 { font-size: 40px; line-height: 1.2; margin-bottom: 24px; }
+    h2 { font-size: 30px; margin-bottom: 16px; }
+    h3 { font-size: 20px; margin-bottom: 12px; }
+
+    p {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* ===== NAV ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .nav a.cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 96px 10%;
+    }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+      padding: 120px 10%;
+      background: linear-gradient(180deg, #f7f9fc, #ffffff);
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-weight: 600;
+      margin: 32px 0;
+      color: var(--primary);
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 14px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .cta .primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .cta .secondary {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===== GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 32px;
+      border-radius: 12px;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .gallery .grid {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+      }
+
+      .gallery img {
+        min-width: 280px;
+        scroll-snap-align: start;
+      }
+    }
+
+    /* ===== LOGOS ===== */
+    .logos {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .logos img {
+      max-height: 48px;
+      filter: grayscale(100%);
+      opacity: 0.85;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 72px 10%;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px) {
+      section { padding: 72px 6%; }
+      .hero { grid-template-columns: 1fr; padding: 96px 6%; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .nav a:not(.cta) { display: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-inter antialiased">
-    <header class="bg-red-600 shadow-md py-4 sticky top-0 z-40">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-semibold text-white">Shyam Distributor</h1>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#home" class="text-white transition duration-300">Home</a></li>
-                    <li><a href="#about-us" class="text-white transition duration-300">About Us</a></li>
-                    <li><a href="#services" class="text-white transition duration-300">Services</a></li>
-                    <li><a href="#clients" class="text-white transition duration-300">Our Clients</a></li>
-                    <li><a href="#gallery" class="text-white transition duration-300">Gallery</a></li>
-                    <li><a href="#contact-us" class="text-white transition duration-300">Contact Us</a></li>
-                </ul>
-            </nav>
-            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
-        </div>
-    </header>
 
-    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
-        <div class="bg-white w-80 h-full absolute right-0 p-6 shadow-xl">
-            <div class="flex justify-end mb-6">
-                <button id="close-menu-btn" class="text-gray-600 hover:text-red-500 focus:outline-none" aria-label="Close Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="block">
-                <ul class="space-y-6">
-                    <li><a href="#home" class="block text-lg text-gray-800 transition duration-300">Home</a></li>
-                    <li><a href="#about-us" class="block text-lg text-gray-800 transition duration-300">About Us</a></li>
-                    <li><a href="#services" class="block text-lg text-gray-800 transition duration-300">Services</a></li>
-                    <li><a href="#clients" class="block text-lg text-gray-800 transition duration-300">Our Clients</a></li>
-                    <li><a href="#gallery" class="block text-lg text-gray-800 transition duration-300">Gallery</a></li>
-                    <li><a href="#contact-us" class="block text-lg text-gray-800 transition duration-300">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+<body>
+
+<header>
+  <div class="nav">
+    <strong>Shyam Distributors</strong>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#location">Location</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="cta">Talk to the Team</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>C&F & Warehousing Solutions for National Manufacturers</h1>
+    <p>
+      Rajasthan-wide operations with inter-state distribution support.
+      65,000 sq. ft. pharma-ready warehouse with operational cold chain,
+      located in VKI — Jaipur’s premier logistics zone with 24×7 truck movement.
+    </p>
+
+    <div class="metrics">
+      <span>65,000 sq ft Infrastructure</span>
+      <span>20+ Active Clients</span>
+      <span>40+ Years Legacy</span>
+      <span>Pan-Rajasthan Coverage</span>
     </div>
 
-    <main>
-        <section id="home" class="py-20 md:py-32 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Trusted C&F Agent & Warehousing Partner in Rajasthan</h2>
-                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto">We provide end-to-end distribution, inventory management, and warehousing solutions for pharmaceutical and allied industries.</p>
-                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto">Based in Jaipur, we ensure reliable and compliant logistics throughout Rajasthan.</p>
-                <a href="#contact-us" class="bg-[#cb4154] hover:bg-[#b1384a] text-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about-us" class="bg-white py-16 md:py-24">
-            <div class="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-6">About Shyam Distributor</h2>
-                    <p class="text-gray-700 leading-relaxed">Shyam Distributor began its journey 40 years ago as a pharmaceutical wholesale business in Jaipur. Over time, our commitment to reliability and service excellence led us to evolve into a full-scale Carry and Forwarding (C&F) and warehousing partner.</p>
-                    <p class="text-gray-700 leading-relaxed mt-4">For the past 25 years, we've been the official C&F agent for over 20 leading pharmaceutical, healthcare, and kitchen & home appliances companies, enabling seamless supply chain operations across Rajasthan.</p>
-                    <p class="text-gray-700 leading-relaxed mt-4">With a centrally located warehouse, dedicated team, and strong logistics coordination, we ensure regulatory compliance, stock transparency, and timely deliveries - making us the trusted distribution hub for manufacturers looking to scale in the region.</p>
-                </div>
-                <div>
-                    <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/outside1.jpg" alt="Modern warehouse interior showing organized shelves" class="rounded-lg shadow-xl">
-                </div>
-            </div>
-        </section>
-
-        <section id="journey-summary" class="bg-gray-50 py-16 md:py-24">
-            <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-4xl font-semibold text-red-600">40+</h3>
-                    <p class="text-gray-700 text-lg mt-1">Years In Business</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-4xl font-semibold text-red-600">15+</h3>
-                    <p class="text-gray-700 text-lg mt-1">Happy Clients</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-4xl font-semibold text-red-600">25+</h3>
-                    <p class="text-gray-700 text-lg mt-1">Years of C&F Expertise</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-4xl font-semibold text-red-600">50+</h3>
-                    <p class="text-gray-700 text-lg mt-1">Trained Staff</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="bg-white py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-12 text-center">Our Comprehensive Services</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-gray-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/services.jpeg" alt="Logistics and C&F operations concept" class="rounded-md mb-4 h-48 w-full object-cover">
-                        <h3 class="text-xl font-semibold text-red-600 mb-2">Carry and Forwarding (C&F)</h3>
-                        <p class="text-gray-700 flex-grow">We act as an extended distribution arm for manufacturing companies, handling inventory, order processing, and delivery operations in Rajasthan.</p>
-                    </article>
-                    <article class="bg-gray-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/services2.webp" alt="Secure and organized warehousing facility" class="rounded-md mb-4 h-48 w-full object-cover">
-                        <h3 class="text-xl font-semibold text-red-600 mb-2">Warehousing & Storage</h3>
-                        <p class="text-gray-700 flex-grow">Secure, compliant storage facility with inventory control, batch tracking, and support for various storage needs, including cold-chain (if applicable).</p>
-                    </article>
-                    <article class="bg-gray-50 rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/services3.webp" alt="Efficient order fulfillment process" class="rounded-md mb-4 h-48 w-full object-cover">
-                        <h3 class="text-xl font-semibold text-red-600 mb-2">Order Fulfilment & Logistics</h3>
-                        <p class="text-gray-700 flex-grow">Timely dispatches, stock reconciliation, and detailed reporting for full supply chain visibility and efficient last-mile delivery.</p>
-                    </article>
-                </div>
-                <p class="text-gray-700 text-center mt-12 text-lg max-w-3xl mx-auto">We offer end-to-end services tailored for pharmaceutical and allied industry clients. Currently managing C&F operations for 20+ companies, our services are built around reliability, scale, and compliance.</p>
-            </div>
-        </section>
-
-        <section id="why-choose-us" class="bg-gray-50 py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-12 text-center">Why Partner With Us</h2>
-                <div class="max-w-2xl mx-auto">
-                    <ul class="list-none space-y-6">
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>55,000 sq ft of warehouse space:</strong> State-of-the-art infrastructure to meet diverse storage needs.</span>
-                        </li>
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>40+ years of industry experience:</strong> Deep understanding of the pharmaceutical and distribution landscape.</span>
-                        </li>
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>25+ years of C&F specialization:</strong> Proven expertise in carry and forwarding operations.</span>
-                        </li>
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>Trusted by 15+ leading companies:</strong> A testament to our reliability and service quality.</span>
-                        </li>
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>Centrally located warehouse in Jaipur:</strong> Strategic positioning for efficient distribution across Rajasthan.</span>
-                        </li>
-                        <li class="flex items-start p-4 bg-white rounded-lg shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 text-green-500 mr-3 flex-shrink-0 mt-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                            </svg>
-                            <span class="text-gray-700 text-lg"><strong>Transparent processes and timely delivery:</strong> Commitment to clear communication and operational excellence.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="clients" class="bg-white py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-12 text-center">Our Valued Clients</h2>
-                <div class="swiper client-swiper">
-                    <div class="swiper-wrapper items-center">
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/gujaratterce.jpeg" alt="Gujrat Terce Laboratories Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Gujrat Terce Laboratories</p>
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/Stadchem.png" alt="Stadchem Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Stadchem</p>
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/mercury.png" alt="Mercury Laboratories Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Mercury Laboratories</p>
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/genopharma.jpeg" alt="Geno Pharmaceuticals Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Geno Pharmaceuticals</p>
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/stovekfraft.png" alt="Stovekraft (Pigeon/Gilma) Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Stovekraft</p>
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/Innoglide.png" alt="Innoglide Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Innoglide</p>
-                        </div>
-                         <div class="swiper-slide text-center">
-                            <img src="https://github.com/jgupta22/shyam_distributors/raw/main/logos/Xenium.png" alt="Xenium Biocorp Logo" class="mx-auto h-20 object-contain mb-3">
-                            <p class="text-gray-600 font-medium">Xenium Biocorp</p>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination mt-8"></div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="gallery" class="bg-gray-50 py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-6 text-center">Our Warehouse & Facilities</h2>
-                <p class="text-gray-700 text-center mb-12 text-lg max-w-3xl mx-auto">
-                    A glimpse into our secure, compliant, and centrally located warehousing facilities in Jaipur.
-                </p>
-
-                <div id="gallery-page-1" class="gallery-page active-page grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office1.jpg" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office4.jpg" alt="Warehouse Image 2" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office5.jpg" alt="Warehouse Image 3" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                </div>
-
-                <div id="gallery-page-2" class="gallery-page hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/outside1.jpg" alt="Warehouse Image 4" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office2.jpg" alt="Warehouse Image 5" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office3.jpg" alt="Warehouse Image 6" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                </div>
-                
-                <div id="gallery-page-3" class="gallery-page hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/office_sh1.jpg" alt="Warehouse Image 7" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/IMG_9402.jpg" alt="Warehouse Image 8" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                    <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-                        <img src="https://github.com/jgupta22/shyam_distributors/raw/main/images/office/IMG_9407.jpg" alt="Warehouse Image 9" class="w-full h-72 object-cover gallery-image">
-                    </div>
-                </div>
-
-                <div id="gallery-dots-container" class="flex justify-center space-x-3 mt-8">
-                    <button class="gallery-dot active-dot" data-page="1" aria-label="Go to gallery page 1"></button>
-                    <button class="gallery-dot" data-page="2" aria-label="Go to gallery page 2"></button>
-                    <button class="gallery-dot" data-page="3" aria-label="Go to gallery page 3"></button>
-                </div>
-            </div>
-        </section>
-        <section id="testimonials" class="bg-white py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-semibold text-red-700 mb-12 text-center">What Our Clients Say</h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-white rounded-lg p-8 shadow-lg">
-                        <p class="text-gray-700 italic text-lg mb-4">"Shyam Distributor has been our trusted partner for over a decade, ensuring smooth and compliant distribution across Rajasthan. Their professionalism is unmatched."</p>
-                        <p class="font-semibold text-red-600 text-right">- Bharat Saini, Gujrat Terce Laboratories Ltd.</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-8 shadow-lg">
-                        <p class="text-gray-700 italic text-lg mb-4">"Their warehousing and logistics expertise have significantly streamlined our supply chain operations. Highly recommend their services."</p>
-                        <p class="font-semibold text-red-600 text-right">- Rajendra Biyani, Stovekraft Ltd.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-us" class="bg-gray-800 py-16 md:py-24 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-2xl md:text-3xl font-semibold mb-8">Get in Touch</h2>
-                <p class="text-gray-300 text-lg mb-4 max-w-xl mx-auto">Ready to optimize your distribution in Rajasthan? Contact us today to discuss your requirements.</p>
-                <div class="mt-8 space-y-4 text-lg">
-                    <strong class="font-medium text-red-400">Phone:</strong> <a href="tel:+919414084999" class="text-gray-200 hover:text-white ml-2">+91 94140 84999</a><span class="text-gray-200 mx-2">|</span>  <a href="tel:+919460239259" class="text-gray-200 hover:text-white">+91 94602 39259</a>
-                    <p><strong class="font-medium text-red-400">Email:</strong> <a href="mailto:shyam_distributor@yahoo.co.in" class="text-gray-200 hover:text-white">shyam_distributor@yahoo.co.in</a></p>
-                    <p><strong class="font-medium text-red-400">Address:</strong> <span class="text-gray-200">C, 182,D 1, Road 9F, VKI, Jaipur, Rajasthan, India</span></p>
-                </div>
-                 <div class="mt-10">
-                    <a href="mailto:info@shyamdistributor.com?subject=Inquiry%20about%20C&F%20Services" class="bg-[#cb4154] hover:bg-[#b1384a] text-white font-semibold py-3 px-8 rounded-full transition duration-300 text-lg">Send Us An Email</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-4 text-center text-gray-400">
-            <p>&copy; <span id="currentYear"></span> Shyam Distributor. All rights reserved.</p>
-            <p class="text-sm mt-1">Designed with care.</p>
-        </div>
-    </footer>
-    
-    <div id="galleryModal" class="gallery-modal">
-        <span class="gallery-modal-close" id="galleryModalClose">&times;</span>
-        <div class="gallery-modal-content">
-            <img src="" alt="Enlarged Warehouse Image" id="modalImage">
-        </div>
+    <div class="cta">
+      <a href="tel:+919414084999" class="primary">Talk to the Team</a>
+      <a href="Shyam_Distributor_Capability.pdf" class="secondary">Download Capability Profile</a>
     </div>
-    <div id="message-box"></div> <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Mobile Menu Toggle
-        const hamburgerBtn = document.getElementById("hamburger-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const closeMenuBtn = document.getElementById("close-menu-btn");
-        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+  </div>
 
-        hamburgerBtn.addEventListener("click", () => {
-            mobileMenu.classList.remove("hidden");
-            document.body.classList.add('overflow-hidden'); // Prevent background scroll
-        });
+  <img src="images/office/interior6.webp" alt="Warehouse interior at VKI Jaipur">
+</section>
 
-        closeMenuBtn.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            document.body.classList.remove('overflow-hidden');
-        });
+<section id="services">
+  <h2>Core Services</h2>
+  <div class="grid">
+    <div class="card">Carry & Forward (C&F)</div>
+    <div class="card">Warehousing</div>
+    <div class="card">Super Stockist</div>
+    <div class="card">Cold Chain Distribution</div>
+    <div class="card">Distribution Support</div>
+  </div>
+</section>
 
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                mobileMenu.classList.add("hidden");
-                document.body.classList.remove('overflow-hidden');
-            });
-        });
+<section id="location">
+  <h2>Strategic Location — VKI Industrial Area, Jaipur</h2>
+  <p>
+    Located in Rajasthan’s most active logistics hub with 24×7 truck movement,
+    immediate access to transporters, and efficient inter-state connectivity.
+  </p>
+</section>
 
-        document.addEventListener('click', (event) => {
-            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-                mobileMenu.classList.add("hidden");
-                document.body.classList.remove('overflow-hidden');
-            }
-        });
+<section>
+  <h2>Infrastructure & Facilities</h2>
+  <div class="grid">
+    <div class="card">65,000 sq ft owned facility</div>
+    <div class="card">Operational cold chain</div>
+    <div class="card">Fire safety & CCTV</div>
+    <div class="card">Office & conference rooms</div>
+  </div>
+</section>
 
-        // Smooth Scroll for all anchor links starting with #
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = document.querySelector('header').offsetHeight || 70; 
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+<section id="gallery" class="gallery">
+  <h2>Our Facilities & Operations</h2>
+  <div class="grid">
+    <img src="images/office/interior7.webp" alt="Warehouse storage area">
+    <img src="images/office/outside1.webp" alt="Warehouse exterior">
+    <img src="images/office/office1.webp" alt="Office workspace">
+    <img src="images/office/office2.webp" alt="Operations team office">
+    <img src="images/office/office3.webp" alt="Conference room">
+  </div>
+</section>
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+<section style="background: var(--bg);">
+  <h2>What Our Clients Say</h2>
+  <div class="grid">
+    <div class="card">
+      “Shyam Distributor has been our trusted C&F partner for over two decades.”
+      <br><strong>— Gujarat Terce Laboratories Ltd.</strong>
+    </div>
+    <div class="card">
+      “Their warehousing and logistics expertise streamlined our supply chain.”
+      <br><strong>— Stovekraft Ltd.</strong>
+    </div>
+  </div>
+</section>
 
-        // Active Nav Link Highlighting on Scroll
-        const sections = document.querySelectorAll('section[id]');
-        const allNavLinks = document.querySelectorAll('header nav ul li a, #mobile-menu nav ul li a');
+<section>
+  <h2>Trusted by Leading Manufacturers</h2>
+  <div class="logos">
+    <img src="logos/stovekraft.webp" alt="Stovekraft">
+    <img src="logos/xenium.webp" alt="Xenium">
+    <img src="logos/zydus.webp" alt="Zydus">
+  </div>
+</section>
 
-        function updateActiveNavLink() {
-            let currentSectionId = '';
-            let fromTop = window.scrollY + (document.querySelector('header').offsetHeight || 70) + 50; 
+<footer id="contact">
+  <h2>Get in Touch</h2>
+  <p>
+    📞 <a href="tel:+919414084999">+91 94140 84999</a><br>
+    📧 <a href="mailto:shyam_distributor@yahoo.co.in">shyam_distributor@yahoo.co.in</a><br>
+    📍 VKI Industrial Area, Jaipur, Rajasthan
+  </p>
+</footer>
 
-            sections.forEach(section => {
-                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-                    currentSectionId = section.getAttribute('id');
-                }
-            });
-            
-             if (currentSectionId === '' && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-                currentSectionId = sections[sections.length - 1].getAttribute('id');
-            }
-
-            allNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === currentSectionId) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('scroll', updateActiveNavLink);
-        window.addEventListener('load', updateActiveNavLink);
-
-        // Show Message Function
-        function showMessage(message, type = 'success') {
-            const messageBox = document.getElementById('message-box');
-            messageBox.textContent = message;
-            
-            messageBox.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 p-4 rounded-md shadow-lg z-50';
-
-            if (type === 'success') {
-                messageBox.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-400');
-            } else {
-                messageBox.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-400');
-            }
-            
-            messageBox.style.display = 'block';
-
-            setTimeout(() => {
-                messageBox.style.display = 'none';
-            }, 3000);
-        }
-
-        // Initialize Swiper for Clients
-        const clientSwiper = new Swiper('.client-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            grabCursor: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: { // sm
-                    slidesPerView: 2,
-                    spaceBetween: 30
-                },
-                1024: { // lg
-                    slidesPerView: 3,
-                    spaceBetween: 40
-                }
-            },
-            autoplay: {
-               delay: 4000,
-               disableOnInteraction: false,
-            },
-        });
-
-        // NEW GALLERY SCRIPT START
-        const galleryDotsContainer = document.getElementById('gallery-dots-container');
-        if (galleryDotsContainer) {
-            const galleryDots = galleryDotsContainer.querySelectorAll('.gallery-dot');
-            const galleryPages = [
-                document.getElementById('gallery-page-1'),
-                document.getElementById('gallery-page-2'),
-                document.getElementById('gallery-page-3')
-            ].filter(page => page !== null);
-
-            galleryDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const pageNumber = dot.dataset.page;
-                    galleryDots.forEach(d => d.classList.remove('active-dot'));
-                    galleryPages.forEach(p => {
-                        if (p) {
-                            p.classList.add('hidden');
-                            p.classList.remove('active-page', 'grid');
-                        }
-                    });
-                    dot.classList.add('active-dot');
-                    const targetPage = document.getElementById(`gallery-page-${pageNumber}`);
-                    if (targetPage) {
-                        targetPage.classList.remove('hidden');
-                        targetPage.classList.add('active-page', 'grid');
-                    }
-                });
-            });
-        }
-        
-        // Gallery Modal Logic
-        const galleryImages = document.querySelectorAll('.gallery-image');
-        const modal = document.getElementById('galleryModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModalButton = document.getElementById('galleryModalClose');
-
-        if (modal && modalImage && closeModalButton) {
-            galleryImages.forEach(image => {
-                image.addEventListener('click', () => {
-                    modalImage.src = image.src;
-                    modalImage.alt = image.alt;
-                    modal.classList.add('active');
-                });
-            });
-
-            const closeModal = () => {
-                modal.classList.remove('active');
-            };
-
-            closeModalButton.addEventListener('click', closeModal);
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        }
-        // NEW GALLERY SCRIPT END
-
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Shyam Distributor",
-          "image": "https://github.com/jgupta22/shyam_distributors/raw/main/images/office/outside1.jpg", /* Replace with your best facility image URL */
-          "url": "https://yourwebsite.com", /* Replace with your actual domain when you get one */
-          "telephone": "+919414084999",
-          "email": "shyam_distributor@yahoo.co.in",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "C, 182, D 1, Road 9F, VKI",
-            "addressLocality": "Jaipur",
-            "addressRegion": "Rajasthan",
-            "postalCode": "302013", /* Add your pincode */
-            "addressCountry": "IN"
-          },
-          "description": "Trusted C&F Agent and warehousing partner in Jaipur, Rajasthan, offering distribution, inventory management, and logistics for pharmaceutical and kitchen appliance industries.",
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ],
-              "opens": "09:00",
-              "closes": "18:00"
-            }
-          ],
-          "sameAs": [
-            /* Add links to your social media profiles here, e.g., LinkedIn, if you have them */
-          ] 
-        }
-        </script>
 </body>
 </html>
