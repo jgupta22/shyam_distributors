@@ -1,367 +1,682 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
   <title>C&F & Warehousing Partner in Rajasthan | Shyam Distributors</title>
+
   <meta name="description" content="Shyam Distributors is a trusted C&F and warehousing partner for nation wide manufacturers. 65,000 sq ft pharma-ready warehouse with operational cold chain in VKI Jaipur, serving Rajasthan and inter-state routes." />
+
   <meta name="robots" content="index, follow" />
 
-  <!-- ===== SCHEMA MARKUP ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://shyamdistributor.com/#localbusiness",
-    "name": "Shyam Distributors",
-    "url": "https://shyamdistributor.com",
-    "telephone": "+91-94140-84999",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "VKI Industrial Area",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302013",
-      "addressCountry": "IN"
-    },
-    "areaServed": [
-      { "@type": "AdministrativeArea", "name": "Rajasthan" },
-      { "@type": "Country", "name": "India" }
-    ],
-    "description": "Shyam Distributors is a C&F agent and warehousing partner for nation wide manufacturers, operating a 65,000 sq ft pharma-ready warehouse with operational cold chain in VKI Industrial Area, Jaipur.",
-    "foundingDate": "1980",
-    "sameAs": [
-      "https://share.google/UuOeTz2oxAoA4ey74"
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Carry and Forward (C&F) Services" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Pharma Warehousing and Cold Chain Distribution" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Super Stockist and Distribution Support" }
-      }
-    ]
-  }
-  </script>
+
+
+  <!-- Favicon -->
+
+  <link rel="icon" href="images/shyam_favicon.ico" type="image/x-icon">
+
+  <link rel="shortcut icon" href="images/shyam_favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Smooth scroll -->
 
   <style>
+
+    html { scroll-behavior: smooth; }
+
+  </style>
+
+
+
+  <!-- Schema Markup -->
+
+  <script type="application/ld+json">
+
+  {
+
+    "@context": "https://schema.org",
+
+    "@type": "LocalBusiness",
+
+    "@id": "https://shyamdistributor.com/#localbusiness",
+
+    "name": "Shyam Distributors",
+
+    "url": "https://shyamdistributor.com",
+
+    "telephone": "+91-94140-84999",
+
+    "address": {
+
+      "@type": "PostalAddress",
+
+      "streetAddress": "VKI Industrial Area",
+
+      "addressLocality": "Jaipur",
+
+      "addressRegion": "Rajasthan",
+
+      "postalCode": "302013",
+
+      "addressCountry": "IN"
+
+    },
+
+    "areaServed": [
+
+      { "@type": "AdministrativeArea", "name": "Rajasthan" },
+
+      { "@type": "Country", "name": "India" }
+
+    ],
+
+    "sameAs": [
+
+      "https://share.google/UuOeTz2oxAoA4ey74"
+
+    ]
+
+  }
+
+  </script>
+
+
+
+  <style>
+
     :root {
+
       --primary: #0a2540;
+
       --accent: #1aa6a6;
+
       --bg: #f7f9fc;
+
       --text: #1f2933;
+
       --muted: #6b7280;
+
       --border: #eef2f7;
+
     }
+
+
 
     * { box-sizing: border-box; }
 
+
+
     body {
+
       margin: 0;
+
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+
       color: var(--text);
+
       line-height: 1.65;
+
       background: #ffffff;
+
     }
 
-    h1, h2, h3 {
-      color: var(--primary);
-      margin-top: 0;
-    }
 
-    h1 { font-size: 40px; line-height: 1.2; margin-bottom: 24px; }
+
+    h1, h2, h3 { color: var(--primary); margin-top: 0; }
+
+    h1 { font-size: 40px; margin-bottom: 24px; }
+
     h2 { font-size: 30px; margin-bottom: 16px; }
-    h3 { font-size: 20px; margin-bottom: 12px; }
+
+
 
     p {
+
       max-width: 720px;
+
       color: var(--muted);
+
       margin-bottom: 24px;
+
     }
 
-    /* ===== NAV ===== */
+
+
+    /* NAV */
+
     header {
+
       position: sticky;
+
       top: 0;
-      background: #ffffff;
+
+      background: #fff;
+
       border-bottom: 1px solid var(--border);
+
       z-index: 1000;
+
     }
+
+
 
     .nav {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       padding: 16px 6%;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
     }
+
+
+
+    .brand {
+
+      font-size: 22px;
+
+      font-weight: 700;
+
+      color: var(--primary);
+
+      text-decoration: none;
+
+    }
+
+
 
     .nav a {
+
       margin-left: 24px;
+
       text-decoration: none;
+
       color: var(--text);
+
       font-weight: 500;
+
     }
+
+
 
     .nav a.cta {
+
       background: var(--accent);
+
       color: #fff;
+
       padding: 10px 16px;
+
       border-radius: 6px;
+
     }
 
-    /* ===== SECTIONS ===== */
+
+
     section {
+
       padding: 96px 10%;
+
     }
+
+
 
     section + section {
+
       border-top: 1px solid var(--border);
+
     }
 
-    /* ===== HERO ===== */
+
+
+    /* HERO */
+
     .hero {
+
       display: grid;
+
       grid-template-columns: 1.1fr 0.9fr;
+
       gap: 64px;
+
       align-items: center;
-      padding: 120px 10%;
+
       background: linear-gradient(180deg, #f7f9fc, #ffffff);
+
     }
+
+
 
     .hero img {
+
       width: 100%;
+
       border-radius: 12px;
-      object-fit: cover;
+
     }
+
+
 
     .metrics {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 20px;
+
       font-weight: 600;
-      margin: 32px 0;
+
       color: var(--primary);
+
     }
 
-    .cta a {
-      display: inline-block;
-      margin-right: 12px;
-      padding: 14px 22px;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-    }
 
-    .cta .primary {
-      background: var(--accent);
-      color: #fff;
-    }
 
-    .cta .secondary {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
+    /* GRID & CARDS */
 
-    /* ===== GRID ===== */
     .grid {
+
       display: grid;
+
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
       gap: 32px;
+
       margin-top: 40px;
+
     }
+
+
 
     .card {
+
       background: var(--bg);
-      padding: 32px;
+
+      padding: 36px;
+
       border-radius: 12px;
+
+      font-size: 17px;
+
+      font-weight: 500;
+
     }
 
-    /* ===== GALLERY ===== */
-    .gallery img {
+
+
+    #services .card {
+
+      font-size: 18px;
+
+      font-weight: 600;
+
+    }
+
+
+
+    /* LOCATION */
+
+    .location-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      gap: 48px;
+
+      align-items: center;
+
+    }
+
+
+
+    .location-map {
+
       width: 100%;
+
       border-radius: 12px;
-      object-fit: cover;
+
+      border: 1px solid var(--border);
+
     }
 
-    @media (max-width: 900px) {
-      .gallery .grid {
-        display: flex;
-        gap: 16px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 16px;
-      }
 
-      .gallery img {
-        min-width: 280px;
-        scroll-snap-align: start;
-      }
+
+    /* GALLERY */
+
+    .gallery img {
+
+      width: 100%;
+
+      border-radius: 12px;
+
     }
 
-    /* ===== LOGOS ===== */
+
+
+    /* LOGOS */
+
     .logos {
+
       display: flex;
+
       gap: 32px;
+
       flex-wrap: wrap;
+
       margin-top: 32px;
+
     }
+
+
 
     .logos img {
+
       max-height: 48px;
-      filter: grayscale(100%);
-      opacity: 0.85;
+
+      opacity: 0.95;
+
     }
 
-    /* ===== FOOTER ===== */
+
+
+    /* FOOTER */
+
     footer {
+
       background: var(--primary);
+
       color: #fff;
+
       padding: 72px 10%;
+
     }
+
+
 
     footer a {
+
       color: #fff;
+
       text-decoration: none;
+
     }
 
-    /* ===== MOBILE ===== */
+
+
+    /* MOBILE */
+
     @media (max-width: 900px) {
+
       section { padding: 72px 6%; }
-      .hero { grid-template-columns: 1fr; padding: 96px 6%; }
-      h1 { font-size: 32px; }
-      h2 { font-size: 26px; }
+
+      .hero { grid-template-columns: 1fr; }
+
+      .location-grid { grid-template-columns: 1fr; }
+
       .nav a:not(.cta) { display: none; }
+
     }
+
   </style>
+
 </head>
+
+
 
 <body>
 
+
+
 <header>
+
   <div class="nav">
-    <strong>Shyam Distributors</strong>
+
+    <a href="/" class="brand">Shyam Distributors</a>
+
     <nav>
+
       <a href="#services">Services</a>
+
       <a href="#location">Location</a>
+
       <a href="#gallery">Gallery</a>
+
       <a href="#contact" class="cta">Talk to the Team</a>
+
     </nav>
+
   </div>
+
 </header>
 
+
+
 <section class="hero">
+
   <div>
+
     <h1>C&F & Warehousing Solutions for National Manufacturers</h1>
+
     <p>
+
       Rajasthan-wide operations with inter-state distribution support.
+
       65,000 sq. ft. pharma-ready warehouse with operational cold chain,
-      located in VKI — Jaipur’s premier logistics zone with 24×7 truck movement.
+
+      located in VKI Industrial Area, Jaipur.
+
     </p>
 
+
+
     <div class="metrics">
+
       <span>65,000 sq ft Infrastructure</span>
+
       <span>20+ Active Clients</span>
+
       <span>40+ Years Legacy</span>
+
       <span>Pan-Rajasthan Coverage</span>
+
     </div>
 
-    <div class="cta">
-      <a href="tel:+919414084999" class="primary">Talk to the Team</a>
-      <a href="Shyam_Distributor_Capability.pdf" class="secondary">Download Capability Profile</a>
-    </div>
+
+
+    <a href="#contact" class="cta">Talk to the Team</a>
+
   </div>
 
-  <img src="images/newtitleimage.webp" alt="Warehouse interior at VKI Jaipur">
+
+
+  <img src="images/newtitleimage.webp" alt="Warehouse facility Jaipur">
+
 </section>
+
+
 
 <section id="services">
+
   <h2>Core Services</h2>
+
   <div class="grid">
+
     <div class="card">Carry & Forward (C&F)</div>
+
     <div class="card">Warehousing</div>
+
     <div class="card">Super Stockist</div>
+
     <div class="card">Cold Chain Distribution</div>
+
     <div class="card">Distribution Support</div>
+
   </div>
+
 </section>
+
+
 
 <section id="location">
+
   <h2>Strategic Location — VKI Industrial Area, Jaipur</h2>
-  <p>
-    Located in Rajasthan’s most active logistics hub with 24×7 truck movement,
-    immediate access to transporters, and efficient inter-state connectivity.
-  </p>
+
+  <div class="location-grid">
+
+    <p>
+
+      Located in Rajasthan’s most active logistics hub with 24×7 truck movement,
+
+      immediate access to transporters, and efficient inter-state connectivity.
+
+    </p>
+
+    <img src="images/office/vki-map.webp" alt="VKI Industrial Area Jaipur map" class="location-map">
+
+  </div>
+
 </section>
+
+
 
 <section>
+
   <h2>Infrastructure & Facilities</h2>
+
   <div class="grid">
+
     <div class="card">65,000 sq ft owned facility</div>
+
     <div class="card">Operational cold chain</div>
+
     <div class="card">Fire safety & CCTV</div>
+
     <div class="card">Office & conference rooms</div>
+
   </div>
+
 </section>
 
+
+
 <section id="gallery" class="gallery">
+
   <h2>Our Facilities & Operations</h2>
+
   <div class="grid">
-    <img src="images/office/outside1.webp" alt="Warehouse exterior">
+
+   <img src="images/office/outside1.webp" alt="Warehouse exterior">
+
     <img src="images/office/office1.webp" alt="Office workspace">
+
     <img src="images/office/office2.webp" alt="Operations team office">
+
     <img src="images/office/office3.webp" alt="Office workspace">
+
     <img src="images/office/office_sh1.webp" alt="Conference room">
+
     <img src="images/office/office5.webp" alt="Conference room">
+
     <img src="images/office/warehouse.webp" alt="Warehouse storage area">
+
    <img src="images/office/interior7.webp" alt="Office workspace">
 
   </div>
+
 </section>
+
+
 
 <section style="background: var(--bg);">
+
   <h2>What Our Clients Say</h2>
+
   <div class="grid">
+
     <div class="card">
-      “Shyam Distributor has been our trusted C&F partner for over two decades.”
+
+      “Shyam Distributors has been our trusted C&F partner for over two decades.”
+
       <br><strong>— Gujarat Terce Laboratories Ltd.</strong>
+
     </div>
+
     <div class="card">
+
       “Their warehousing and logistics expertise streamlined our supply chain.”
+
       <br><strong>— Stovekraft Ltd.</strong>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <section>
+
   <h2>Trusted by Leading Manufacturers</h2>
+
   <div class="logos">
+
     <img src="logos/stovekraft.webp" alt="Stovekraft">
+
     <img src="logos/gujaratterce.webp" alt="Gujrat Terce">
+
     <img src="logos/xenium.webp" alt="Xenium">
+
     <img src="logos/Stadchem.png" alt="Stadchem">
+
     <img src="logos/mercury (1).webp" alt="Mercury">
+
     <img src="logos/Innoglide.png" alt="Innoglide">
+
     <img src="logos/Cipla.webp" alt="Cipla">
+
   </div>
+
 </section>
 
+
+
 <footer id="contact">
+
   <h2>Get in Touch</h2>
+
   <p>
+
     📞 <a href="tel:+919414084999">+91 94140 84999</a><br>
+
     📧 <a href="mailto:shyam_distributor@yahoo.co.in">shyam_distributor@yahoo.co.in</a><br>
+
     📍 VKI Industrial Area, Jaipur, Rajasthan
+
   </p>
+
 </footer>
 
+
+
 </body>
+
 </html>
+
