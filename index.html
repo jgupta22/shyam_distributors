@@ -82,20 +82,29 @@
     section{padding:96px 10%;}
 
     /* HERO */
-    .hero{
-      background:var(--bg);
-      display:grid;
-      grid-template-columns:1fr 1.2fr;
-      gap:72px;
-      align-items:center;
-    }
+  .hero {
+  display: flex;
+  align-items: flex-start;        
+  gap: 64px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
 
-    .hero img{
-      width:100%;
-      border-radius:18px;
-      min-height:420px;
-      object-fit:cover;
-    }
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: -56px;              
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 560px;               
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
 
     .stats{
       display:grid;
@@ -153,35 +162,55 @@
     }
 
     /* TESTIMONIALS */
-    .testimonial{
-      font-style:italic;
-    }
+    .testimonial-card .author {
+  margin-top: 16px;
+}
+
+.testimonial-card .author strong {
+  display: block;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.testimonial-card .author span {
+  font-size: 14px;
+  color: var(--muted);
+}
 
     /* LOGO SLIDER */
-    .logo-slider{
-      overflow:hidden;
-      width:100%;
-      margin-top:48px;
-    }
+  .client-logos {
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0;
+}
 
-    .logo-track{
-      display:flex;
-      gap:48px;
-      animation:scroll 30s linear infinite;
-      align-items:center;
-    }
+.logo-marquee {
+  width: 100%;
+  overflow: hidden;
+}
 
-    .logo-track img{
-      max-height:52px;
-      max-width:150px;
-      object-fit:contain;
-    }
+.logo-track {
+  display: flex;
+  gap: 80px;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+}
 
-    @keyframes scroll{
-      from{transform:translateX(0);}
-      to{transform:translateX(-50%);}
-    }
+.logo-track img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
+  
     footer{
       background:var(--primary);
       color:#fff;
@@ -190,12 +219,22 @@
 
     footer p{color:#e5e7eb;}
 
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .stats{grid-template-columns:1fr 1fr;}
-      section{padding:72px 6%;}
-      .nav a:not(.btn){display:none;}
-    }
+    @media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 60px;
+  }
+
+  .hero-image {
+    margin-top: 0;            
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}
+
   </style>
 </head>
 
@@ -292,16 +331,38 @@
 <section style="background:#f8f9fb;">
   <h2>What Our Clients Say</h2>
   <div class="grid">
-    <div class="card testimonial">“Shyam Distributors has been our trusted C&F partner in Rajasthan.”</div>
-    <div class="card testimonial">“Strong infrastructure and dependable execution.”</div>
-    <div class="card testimonial">“Reliable partner with deep compliance understanding.”</div>
+     <div class="card testimonial">
+      “Shyam Distributors has been our trusted C&F partner in Rajasthan.
+      Their warehousing discipline and operational reliability stand out.”
+      <br/><br/>
+      <strong>— Bharat Saini, Gujrat Terce Laboratories Ltd</strong>
+    </div>
+    <div class="card testimonial">
+      “Strong infrastructure, responsive communication, and dependable execution.
+      Exactly what we look for in a long-term logistics partner.”
+      <br/><br/>
+      <strong>— Rajendra Biyani, Stovekraft Ltd.</strong>
+    </div>
+    <div class="card testimonial">
+      “Their understanding of compliance and distribution at scale
+      makes them a reliable partner for Rajasthan operations.”
+      <br/><br/>
+      <strong>— Director, National Pharma Company</strong>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Trusted by Leading Manufacturers</h2>
-  <div class="logo-slider">
+   <div class="logo-marquee">
     <div class="logo-track">
+      <img src="logos/stovekfraft.webp">
+      <img src="logos/gujaratterce.webp">
+      <img src="logos/xenium.webp">
+      <img src="logos/Stadchem.png">
+      <img src="logos/mercury.webp">
+      <img src="logos/Innoglide.png">
+      <img src="logos/Cipla.webp">
       <img src="logos/stovekfraft.webp">
       <img src="logos/gujaratterce.webp">
       <img src="logos/xenium.webp">
@@ -316,7 +377,7 @@
 <footer id="contact">
   <h2>Contact Us</h2>
   <p>
-    📞 +91-94140-84999 | +91-9460239259<br/>
+    📞 <a href="tel:+919414084999" class="phone-link">+91-94140-84999</a> | <a href="tel:+919460239259" class="phone-link">+91-9460239259</a> <br/>
     ✉️ shyam_distributor@yahoo.co.in<br/>
     📍 VKI Industrial Area, Jaipur, Rajasthan
   </p>
