@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Shyam Distributors | C&F & Warehousing Partner in Rajasthan</title>
+  <meta name="description" content="Shyam Distributors is a trusted C&F and warehousing partner for national manufacturers. 65,000 sq ft pharma-ready warehouse with cold chain in VKI Jaipur." />
+
+  <link rel="icon" href="images/shyam_favicon.ico" />
+
+  <style>
+    :root{
+      --primary:#0b1e3c;
+      --accent:#d63447;
+      --bg:#f8f9fb;
+      --card:#ffffff;
+      --text:#1f2933;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    h1,h2,h3{color:var(--primary);margin-top:0;}
+    h1{font-size:48px;}
+    h2{font-size:34px;}
+    p{color:var(--muted);}
+    a{text-decoration:none;color:inherit;}
+
+    /* Utility bar */
+    .utility{
+      background:var(--primary);
+      color:#fff;
+      font-size:14px;
+      padding:8px 10%;
+      display:flex;
+      justify-content:space-between;
+    }
+
+    /* Navbar */
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{
+      font-size:22px;
+      font-weight:700;
+      color:var(--primary);
+    }
+
+    .nav a{margin-left:24px;font-weight:500;}
+
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      padding:14px 24px;
+      border-radius:8px;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    section{padding:96px 10%;}
+
+    /* Hero */
+    .hero{
+      background:var(--bg);
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:64px;
+      align-items:center;
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:16px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      margin-top:48px;
+    }
+
+    .stat{
+      background:var(--card);
+      padding:28px;
+      text-align:center;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+      font-weight:600;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:32px;
+      margin-top:48px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:32px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+    }
+
+    /* Gallery */
+    .gallery img{
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      border-radius:14px;
+    }
+
+    /* Testimonials */
+    .testimonial{
+      font-style:italic;
+    }
+
+    /* Logo slider */
+    .logo-slider{
+      overflow:hidden;
+      width:100%;
+      margin-top:48px;
+    }
+
+    .logo-track{
+      display:flex;
+      gap:48px;
+      animation:scroll 30s linear infinite;
+    }
+
+    .logo-track img{
+      max-height:48px;
+      max-width:140px;
+      object-fit:contain;
+    }
+
+    @keyframes scroll{
+      from{transform:translateX(0);}
+      to{transform:translateX(-50%);}
+    }
+
+    footer{
+      background:var(--primary);
+      color:#fff;
+      padding:72px 10%;
+    }
+
+    footer p,footer a{color:#e5e7eb;}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr 1fr;}
+      section{padding:72px 6%;}
+      .nav a:not(.btn){display:none;}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="utility">
+  <div>📞 +91-94140-84999 | ✉️ shyam_distributor@yahoo.co.in</div>
+</div>
+
+<header>
+  <div class="nav">
+    <a href="/" class="brand">Shyam Distributors</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="btn">Talk to the Team</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>C&F & Warehousing Solutions for National Manufacturers</h1>
+    <p>
+      Rajasthan-wide operations with inter-state distribution support.
+      65,000 sq. ft. owned, pharma-ready warehouse with operational cold chain,
+      located in VKI Industrial Area, Jaipur.
+    </p>
+    <a href="#contact" class="btn">Talk to the Team</a>
+
+    <div class="stats">
+      <div class="stat">65,000 sq ft<br/>Infrastructure</div>
+      <div class="stat">20+<br/>Active Clients</div>
+      <div class="stat">40+ Years<br/>Legacy</div>
+      <div class="stat">Pan-Rajasthan<br/>Coverage</div>
+    </div>
+  </div>
+
+  <img src="images/newtitleimage.webp" alt="Warehouse operations">
+</section>
+
+<section id="services">
+  <h2>Core Services</h2>
+  <div class="grid">
+    <div class="card">Carry & Forward (C&F)</div>
+    <div class="card">Warehousing</div>
+    <div class="card">Super Stockist</div>
+    <div class="card">Cold Chain Distribution</div>
+    <div class="card">Distribution Support</div>
+  </div>
+</section>
+
+<section>
+  <h2>Infrastructure & Facilities</h2>
+  <div class="grid">
+    <div class="card">65,000 sq ft owned facility</div>
+    <div class="card">Operational cold chain infrastructure</div>
+    <div class="card">Fire safety systems & CCTV surveillance</div>
+    <div class="card">Office & conference rooms</div>
+    <div class="card">
+      <strong>Strategic VKI Location</strong><br/>
+      Located in VKI Industrial Area, Jaipur — Rajasthan’s most active logistics hub
+      with immediate access to transporters and 24×7 truck movement.
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Our Facilities & Operations</h2>
+  <div class="grid">
+    <img src="images/office/interior6.webp" alt="">
+    <img src="images/office/interior7.webp" alt="">
+    <img src="images/office/outside1.webp" alt="">
+    <img src="images/office/office1.webp" alt="">
+    <img src="images/office/office2.webp" alt="">
+    <img src="images/office/office3.webp" alt="">
+    <img src="images/office/office4.webp" alt="">
+    <img src="images/office/office5.webp" alt="">
+    <img src="images/office/office_sh1.webp" alt="">
+  </div>
+</section>
+
+<section style="background:#f8f9fb;">
+  <h2>What Our Clients Say</h2>
+  <div class="grid">
+    <div class="card testimonial">
+      “Shyam Distributors has been our trusted C&F partner in Rajasthan.
+      Their warehousing discipline and operational reliability stand out.”
+      <br/><br/>
+      <strong>— Senior Operations Head, Pharmaceutical Manufacturer</strong>
+    </div>
+    <div class="card testimonial">
+      “Strong infrastructure, responsive communication, and dependable execution.
+      Exactly what we look for in a long-term logistics partner.”
+      <br/><br/>
+      <strong>— Supply Chain Manager, Consumer Products Brand</strong>
+    </div>
+    <div class="card testimonial">
+      “Their understanding of compliance and distribution at scale
+      makes them a reliable partner for Rajasthan operations.”
+      <br/><br/>
+      <strong>— Director, National Pharma Company</strong>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Trusted by Leading Manufacturers</h2>
+  <div class="logo-slider">
+    <div class="logo-track">
+      <img src="logos/cipla.webp">
+      <img src="logos/mercury.webp">
+      <img src="logos/stadchem.webp">
+      <img src="logos/xenium.webp">
+      <img src="logos/stovekraft.webp">
+      <img src="logos/cipla.webp">
+      <img src="logos/mercury.webp">
+      <img src="logos/stadchem.webp">
+      <img src="logos/xenium.webp">
+      <img src="logos/stovekraft.webp">
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    📞 +91-94140-84999<br/>
+    ✉️ shyam_distributor@yahoo.co.in<br/>
+    📍 VKI Industrial Area, Jaipur, Rajasthan
+  </p>
+</footer>
+
+</body>
+</html>
