@@ -84,51 +84,47 @@
     /* HERO */
 .hero {
   display: flex;
-  align-items: flex-start;
-  gap: 64px;
+  align-items: center;
+  gap: 60px;
   padding-top: 80px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
-/* Image wrapper controls size */
+/* CONSTRAIN IMAGE AREA */
 .hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  margin-top: -40px;            
-  max-height: 420px;            
-  overflow: hidden;             
+  flex: 0 0 48%;
+  max-height: 520px;         
+  overflow: hidden;
+  border-radius: 20px;
 }
 
-/* Image itself */
+/* IMAGE NEVER ESCAPES CONTAINER */
 .hero-image img {
   width: 100%;
-  max-width: 520px;             
-  height: 420px;                
-  object-fit: cover;            
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  height: 100%;
+  object-fit: cover;         
+  display: block;
 }
 
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:24px;
-      margin-top:48px;
-    }
+    .stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* FORCE EQUAL WIDTH */
+  gap: 24px;
+  margin-top: 40px;
+}
 
-   .stat {
-  background: var(--card);
-  padding: 28px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+.stat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 
-  height: 140px;               
-  display: flex;
-  flex-direction: column;
-  justify-content: center;     
+  height: 140px;              
+  padding: 20px;
+
+  display: flex;            
   align-items: center;
+  justify-content: center;
+  text-align: center;
 
   font-weight: 600;
 }
@@ -223,32 +219,26 @@
 
     footer p{color:#e5e7eb;}
 
-   @media (max-width: 900px) {
+@media (max-width: 900px) {
   .hero {
     flex-direction: column;
-    gap: 40px;
     padding-top: 60px;
   }
 
   .hero-image {
-    margin-top: 0;
-    max-height: none;
-  }
-
-  .hero-image img {
-    height: auto;
-    max-width: 100%;
+    max-height: 360px;
+    width: 100%;
   }
 }
     
 @media (max-width: 900px) {
-  .stats {
+  .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
-  .stats {
+@media (max-width: 500px) {
+  .stats-container {
     grid-template-columns: 1fr;
   }
 }
