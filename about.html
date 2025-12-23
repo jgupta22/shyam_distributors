@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>About Us | Shyam Distributors</title>
+  <meta name="description" content="Learn about the leadership and 40+ year legacy of Shyam Distributors, Jaipur's premier C&F and warehousing partner." />
+
+  <link rel="icon" href="images/shyam_favicon.ico" />
+
+  <style>
+    /* REUSING MAIN STYLES FOR CONSISTENCY */
+    :root{
+      --primary:#0b1e3c;
+      --accent:#d63447;
+      --bg:#f8f9fb;
+      --card:#ffffff;
+      --text:#1f2933;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+    }
+
+    *{box-sizing:border-box;}
+    
+    html { scroll-behavior: smooth; }
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    h1,h2,h3{color:var(--primary);margin-top:0;}
+    h1{font-size:48px; line-height: 1.1;}
+    h2{font-size:34px;}
+    h3{font-size:20px;margin-bottom:8px;}
+    p{color:var(--muted); margin-bottom: 24px;}
+    a{text-decoration:none;color:inherit;}
+
+    .utility{
+      background:var(--primary);
+      color:#fff;
+      font-size:14px;
+      padding:8px 10%;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap: wrap; 
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap: wrap; 
+      gap: 20px;
+    }
+
+    .brand{
+      font-size:26px;
+      font-weight:700;
+      color:var(--primary);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .nav-links a{
+        font-weight:500;
+        position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+        color: var(--accent);
+    }
+
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      padding:14px 26px;
+      border-radius:8px;
+      font-weight:600;
+      display:inline-block;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #b02334; }
+
+    section{padding:96px 10%;}
+    section:nth-of-type(even) { background-color: var(--bg); }
+
+    /* ABOUT PAGE SPECIFIC STYLES */
+    .about-header {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .leaders-section {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    /* UPDATED: Container for multiple leader images */
+    .leaders-visuals {
+        display: flex;
+        gap: 40px; /* Increased gap for names */
+        justify-content: center;
+        flex-wrap: wrap;
+        flex: 0 0 auto; /* Don't shrink */
+    }
+
+    /* Container for individual profile (Avatar + Name) */
+    .leader-profile {
+        text-align: center;
+        max-width: 280px;
+    }
+
+    /* Individual Circular Image Styling */
+    .leader-avatar {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%; /* Makes it circular */
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        border: 8px solid #fff; /* White rim */
+        position: relative;
+        margin-bottom: 20px; /* Space between image and name */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .leader-avatar img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover; /* Ensures image covers the circle without stretching */
+        object-position: top center; /* Focuses on faces typically at the top */
+    }
+    
+    .leader-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0;
+    }
+
+    .leader-title {
+        font-size: 16px;
+        color: var(--muted);
+        margin: 4px 0 0 0;
+    }
+
+    .leaders-bio {
+        flex: 1;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .value-item {
+        background: white;
+        padding: 30px;
+        border-left: 4px solid var(--accent);
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    footer{
+      background:var(--primary);
+      color:#fff;
+      padding:72px 10%;
+    }
+    footer p{color:#e5e7eb;}
+    footer a:hover { color: #fff; text-decoration: underline; }
+
+    @media (max-width: 900px) {
+        .leaders-section { flex-direction: column; text-align: center; }
+        /* Smaller circles on mobile/tablet to fit better */
+        .leader-avatar { width: 220px; height: 220px; }
+        .leader-profile { max-width: 100%; }
+        .nav { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="utility">
+  <div>📞 +91-94140-84999 | ✉️ shyam_distributor@yahoo.co.in</div>
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Shyam Distributors</a>
+    <nav class="nav-links">
+      <a href="about.html" class="active">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="#contact" class="btn">Talk to the Team</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div class="about-header">
+    <h1>Building Trust Since 1980</h1>
+    <p>
+        Shyam Distributors began with a simple mission: to bridge the gap between national manufacturers and the vast Rajasthan market. 
+        Over four decades, we have evolved from a traditional distribution house into a modern C&F powerhouse, 
+        combining family values with corporate discipline.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="leaders-section">
+    <!-- Updated container for two profiles with names -->
+    <div class="leaders-visuals">
+      
+      <!-- Leader Profile 1 -->
+      <div class="leader-profile">
+        <div class="leader-avatar">
+          <!-- Placeholder 1 -->
+          <img src="images/Birbal.webp" alt="Birbal Gupta">
+        </div>
+        <h3 class="leader-name">Birbal Gupta</h3>
+        <p class="leader-title">Founder and CEO</p>
+      </div>
+
+      <!-- Leader Profile 2 -->
+      <div class="leader-profile">
+        <div class="leader-avatar">
+          <!-- Placeholder 2 -->
+          <img src="images/Lokesh.webp" alt="Lokesh Agarwal">
+        </div>
+        <h3 class="leader-name">Lokesh Agarwal</h3>
+        <p class="leader-title">Director</p>
+      </div>
+
+    </div>
+
+    <div class="leaders-bio">
+      <h2>Meet the Leadership</h2>
+      <p>
+        <strong>Experience meeting Execution.</strong>
+      </p>
+      <p>
+        Our leadership team brings over 40 years of hands-on experience in the logistics and pharmaceutical supply chain industry. 
+        Having navigated the complexities of trade in Rajasthan through changing tax regimes and market dynamics, 
+        they have built an organization rooted in resilience and adaptability.
+      </p>
+      <p>
+        Unlike purely corporate logistics firms, our leaders believe in personal involvement. 
+        From overseeing compliance for sensitive pharma products to ensuring dispatch timelines are met during peak seasons, 
+        their "boots on the ground" approach ensures that every client gets the attention of a partner, not just a vendor.
+      </p>
+      <p>
+        <em>"We don't just store boxes; we manage reputations. When a manufacturer trusts us with their inventory, 
+        they trust us with their brand promise to the customer."</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+    <h2>Our Vision & Values</h2>
+    <div class="values-grid">
+        <div class="value-item">
+            <h3>Uncompromised Compliance</h3>
+            <p>Especially in the pharmaceutical sector, there is no room for error. We adhere to strict expiry management (FEFO), cold chain integrity, and documentation standards.</p>
+        </div>
+        <div class="value-item">
+            <h3>Relationship First</h3>
+            <p>We believe in long-term partnerships. Many of our clients have been with us for over a decade, a testament to our transparent billing and reliable service.</p>
+        </div>
+        <div class="value-item">
+            <h3>Modern Infrastructure</h3>
+            <p>We consistently reinvest in our facilities. From fire safety systems to automated inventory tracking, we ensure our warehouse matches national standards.</p>
+        </div>
+        <div class="value-item">
+            <h3>Market Reach</h3>
+            <p>Our deep network across Rajasthan ensures that your products don't just sit in a warehouse—they reach the distributors and retailers efficiently.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    Looking for a partner in Rajasthan?<br/>
+    📞 <a href="tel:+919414084999" class="phone-link">+91-94140-84999</a><br/>
+    ✉️ shyam_distributor@yahoo.co.in<br/>
+    📍 VKI Industrial Area, Jaipur, Rajasthan
+  </p>
+</footer>
+
+</body>
+</html>
