@@ -81,53 +81,63 @@
 
     section{padding:96px 10%;}
 
-    /* HERO */
-.hero {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
+    /* --- HERO SECTION FIXED --- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
 
-/* CONSTRAIN IMAGE AREA */
-.hero-image {
-  flex: 0 0 48%;
-  max-height: 520px;         
-  overflow: hidden;
-  border-radius: 20px;
-}
+    /* Added this class to wrapp text content */
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+    }
 
-/* IMAGE NEVER ESCAPES CONTAINER */
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         
-  display: block;
-}
+    /* Fixed Image Area */
+    .hero-image {
+      flex: 0 0 45%; 
+      height: 450px; 
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
 
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Fixed Stats Grid */
     .stats-container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* FORCE EQUAL WIDTH */
-  gap: 24px;
-  margin-top: 40px;
-}
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
 
-.stat-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-
-  height: 140px;              
-  padding: 20px;
-
-  display: flex;            
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  font-weight: 600;
-}
+    /* Fixed Stat Cards */
+    .stat-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 15px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+    /* --------------------------- */
 
     /* GRID CARDS */
     .grid{
@@ -163,54 +173,53 @@
 
     /* TESTIMONIALS */
     .testimonial-card .author {
-  margin-top: 16px;
-}
+      margin-top: 16px;
+    }
 
-.testimonial-card .author strong {
-  display: block;
-  color: var(--primary);
-  font-weight: 600;
-}
+    .testimonial-card .author strong {
+      display: block;
+      color: var(--primary);
+      font-weight: 600;
+    }
 
-.testimonial-card .author span {
-  font-size: 14px;
-  color: var(--muted);
-}
+    .testimonial-card .author span {
+      font-size: 14px;
+      color: var(--muted);
+    }
 
     /* LOGO SLIDER */
-  .client-logos {
-  width: 100%;
-  overflow: hidden;
-  padding: 60px 0;
-}
+    .client-logos {
+      width: 100%;
+      overflow: hidden;
+      padding: 60px 0;
+    }
 
-.logo-marquee {
-  width: 100%;
-  overflow: hidden;
-}
+    .logo-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
 
-.logo-track {
-  display: flex;
-  gap: 80px;
-  width: max-content;
-  animation: scrollLogos 30s linear infinite;
-}
+    .logo-track {
+      display: flex;
+      gap: 80px;
+      width: max-content;
+      animation: scrollLogos 30s linear infinite;
+    }
 
-.logo-track img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-@keyframes scrollLogos {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+    .logo-track img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    @keyframes scrollLogos {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
-  
     footer{
       background:var(--primary);
       color:#fff;
@@ -219,31 +228,29 @@
 
     footer p{color:#e5e7eb;}
 
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    padding-top: 60px;
-  }
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding-top: 60px;
+      }
 
-  .hero-image {
-    max-height: 360px;
-    width: 100%;
-  }
-}
+      .hero-image {
+        max-height: 360px;
+        width: 100%;
+      }
+    }
     
-@media (max-width: 900px) {
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media (max-width: 900px) {
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-@media (max-width: 500px) {
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-
+    @media (max-width: 500px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -265,7 +272,7 @@
 </header>
 
 <section class="hero">
-  <div>
+  <div class="hero-content">
     <h1>C&F & Warehousing Solutions for Nationwide Manufacturers</h1>
     <p>
       Rajasthan-wide operations with inter-state distribution support.
@@ -275,15 +282,17 @@
 
     <a href="#contact" class="btn">Talk to the Team</a>
 
-    <div class="stats">
-      <div class="stat">65,000 sq ft<br/>Infrastructure</div>
-      <div class="stat">20+<br/>Active Clients</div>
-      <div class="stat">40+ Years<br/>Legacy</div>
-      <div class="stat">Pan-Rajasthan<br/>Coverage</div>
+    <div class="stats-container">
+      <div class="stat-card">65,000 sq ft<br/>Infrastructure</div>
+      <div class="stat-card">20+<br/>Active Clients</div>
+      <div class="stat-card">40+ Years<br/>Legacy</div>
+      <div class="stat-card">Pan-Rajasthan<br/>Coverage</div>
     </div>
   </div>
 
-  <img src="images/shyamtitleimage.webp" alt="Warehouse operations">
+  <div class="hero-image">
+    <img src="images/shyamtitleimage.webp" alt="Warehouse operations">
+  </div>
 </section>
 
 <section id="services">
@@ -394,4 +403,3 @@
 
 </body>
 </html>
-
