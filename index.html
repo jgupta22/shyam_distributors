@@ -4,10 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+  <!-- SEO: Primary Meta Tags -->
   <title>Shyam Distributors | C&F & Warehousing Partner in Rajasthan</title>
-  <meta name="description" content="Shyam Distributors is a trusted C&F and warehousing partner for national manufacturers. 65,000 sq ft pharma-ready warehouse with cold chain in VKI Jaipur." />
+  <meta name="description" content="Shyam Distributors is a trusted C&F, Super Stockist, and warehousing partner in Jaipur, Rajasthan. 65,000 sq ft pharma-ready warehouse with cold chain solutions." />
+  <meta name="keywords" content="C&F Agent Rajasthan, Warehouse in Jaipur, Super Stockist Rajasthan, Cold Chain Logistics Jaipur, Pharmaceutical Distribution Rajasthan, Shyam Distributors" />
+  <meta name="author" content="Shyam Distributors" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- SEO: Canonical URL (Replace with your actual domain) -->
+  <link rel="canonical" href="https://www.shyamdistributors.com/" />
+
+  <!-- SEO: Geo Tags for Local Search -->
+  <meta name="geo.region" content="IN-RJ" />
+  <meta name="geo.placename" content="Jaipur" />
+  <meta name="geo.position" content="26.9124;75.7873" /> <!-- Approx Lat/Long for Jaipur -->
+  <meta name="ICBM" content="26.9124, 75.7873" />
+
+  <!-- Social Media: Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.shyamdistributors.com/" />
+  <meta property="og:title" content="Shyam Distributors | Premier Warehousing & C&F Solutions" />
+  <meta property="og:description" content="Your trusted logistics partner in Rajasthan. 65,000 sq ft warehouse, cold chain, and 40+ years of legacy." />
+  <meta property="og:image" content="https://www.shyamdistributors.com/images/shyamtitleimage.webp" />
+  <meta property="og:site_name" content="Shyam Distributors" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Social Media: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.shyamdistributors.com/" />
+  <meta name="twitter:title" content="Shyam Distributors | C&F & Warehousing in Jaipur" />
+  <meta name="twitter:description" content="Trusted C&F and warehousing partner for national manufacturers in Rajasthan. 65k sq ft facility." />
+  <meta name="twitter:image" content="https://www.shyamdistributors.com/images/shyamtitleimage.webp" />
 
   <link rel="icon" href="images/shyam_favicon.ico" />
+
+  <!-- SEO: Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Shyam Distributors",
+    "image": "https://www.shyamdistributors.com/images/shyamtitleimage.webp",
+    "telephone": "+91-94140-84999",
+    "email": "shyam_distributor@yahoo.co.in",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "VKI Industrial Area",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302013",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 26.9124,
+      "longitude": 75.7873
+    },
+    "url": "https://www.shyamdistributors.com",
+    "description": "Shyam Distributors is a trusted C&F and warehousing partner for national manufacturers in Rajasthan, offering 65,000 sq ft of storage and cold chain solutions.",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "areaServed": "Rajasthan"
+  }
+  </script>
 
   <style>
     :root{
@@ -83,7 +153,14 @@
         gap: 24px;
     }
 
-    .nav-links a{font-weight:500;}
+    .nav-links a{
+        font-weight:500;
+        position: relative;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
 
     .btn{
       background:var(--accent);
@@ -190,10 +267,62 @@
       border-radius:14px;
       transition:transform .2s ease;
       background-color: #eee; /* Perf: Reduce perceived load time */
+      cursor: pointer; /* UX: Indicate clickable */
     }
 
-    .gallery a:hover img{
+    .gallery img:hover{
       transform:scale(1.02);
+    }
+
+    /* LIGHTBOX (New Feature) */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.active .lightbox-content {
+      transform: scale(1);
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2001;
+      line-height: 1;
+    }
+
+    .close-lightbox:hover {
+      color: var(--accent);
     }
 
     /* TESTIMONIALS */
@@ -292,17 +421,19 @@
 
 <body>
 
-<div class="utility">
+<!-- Added aria-label for accessibility -->
+<div class="utility" aria-label="Contact Information">
   <div>📞 +91-94140-84999 | ✉️ shyam_distributor@yahoo.co.in</div>
 </div>
 
 <header>
   <div class="nav">
     <a href="/" class="brand">Shyam Distributors</a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="about.html">About Us</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact" class="btn">Talk to the Team</a>
+      <a href="#contact" class="btn" aria-label="Contact the Team">Talk to the Team</a>
     </nav>
   </div>
 </header>
@@ -316,7 +447,7 @@
       located in VKI Industrial Area, Jaipur.
     </p>
 
-    <a href="#contact" class="btn">Talk to the Team</a>
+    <a href="#contact" class="btn" aria-label="Contact the Team">Talk to the Team</a>
 
     <div class="stats-container">
       <div class="stat-card">65,000 sq ft<br/>Infrastructure</div>
@@ -327,8 +458,7 @@
   </div>
 
   <div class="hero-image">
-    <!-- Eager loading for LCP element -->
-    <img src="images/newtitleimage.webp" alt="Warehouse operations" loading="eager">
+    <img src="images/shyamtitleimage.webp" alt="Shyam Distributors Warehouse Operations in Jaipur" loading="eager">
   </div>
 </section>
 
@@ -371,16 +501,16 @@
 
 <section id="gallery" class="gallery">
   <h2>Our Facilities & Operations</h2>
+  <!-- SEO: Improved alt tags for better image indexing -->
   <div class="grid">
-    <!-- Perf: Added lazy loading to off-screen images -->
-    <a href="images/office/outside1.webp" target="_blank"><img src="images/office/outside1.webp" loading="lazy" alt="Office Exterior"></a>
-    <a href="images/office/office1.webp" target="_blank"><img src="images/office/office1.webp" loading="lazy" alt="Office Interior"></a>
-    <a href="images/office/office2.webp" target="_blank"><img src="images/office/office2.webp" loading="lazy" alt="Office Workspace"></a>
-    <a href="images/office/office3.webp" target="_blank"><img src="images/office/office3.webp" loading="lazy" alt="Office Corridor"></a>
-    <a href="images/office/office_sh1.webp" target="_blank"><img src="images/office/office_sh1.webp" loading="lazy" alt="Office Staff"></a>
-    <a href="images/office/office5.webp" target="_blank"><img src="images/office/office5.webp" loading="lazy" alt="Meeting Room"></a>
-    <a href="images/office/warehouse.webp" target="_blank"><img src="images/office/warehouse.webp" loading="lazy" alt="Warehouse Racks"></a>
-    <a href="images/office/interior7.webp" target="_blank"><img src="images/office/interior7.webp" loading="lazy" alt="Facility Interior"></a>
+    <img src="images/office/outside1.webp" loading="lazy" alt="Shyam Distributors Office Exterior in VKI Jaipur">
+    <img src="images/office/office1.webp" loading="lazy" alt="Modern Corporate Office Interior">
+    <img src="images/office/office2.webp" loading="lazy" alt="Shyam Distributors Workspace and Desks">
+    <img src="images/office/office3.webp" loading="lazy" alt="Administrative Office Corridor">
+    <img src="images/office/office_sh1.webp" loading="lazy" alt="Shyam Distributors Office Staff at Work">
+    <img src="images/office/office5.webp" loading="lazy" alt="Conference and Meeting Room">
+    <img src="images/office/warehouse.webp" loading="lazy" alt="Warehouse Racks and Storage Systems">
+    <img src="images/office/interior7.webp" loading="lazy" alt="Warehouse Facility Interior View">
   </div>
 </section>
 
@@ -412,22 +542,20 @@
   <h2>Trusted by Leading Manufacturers</h2>
    <div class="logo-marquee">
     <div class="logo-track">
-      <!-- Perf: Lazy load logos -->
-      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft">
-      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce">
-      <img src="logos/xenium.webp" loading="lazy" alt="Xenium">
-      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem">
-      <img src="logos/mercury.webp" loading="lazy" alt="Mercury">
-      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide">
-      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla">
-      <!-- Duplicates for marquee effect -->
-      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft">
-      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce">
-      <img src="logos/xenium.webp" loading="lazy" alt="Xenium">
-      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem">
-      <img src="logos/mercury.webp" loading="lazy" alt="Mercury">
-      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide">
-      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla">
+      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft Logo">
+      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce Logo">
+      <img src="logos/xenium.webp" loading="lazy" alt="Xenium Logo">
+      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem Logo">
+      <img src="logos/mercury.webp" loading="lazy" alt="Mercury Logo">
+      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide Logo">
+      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla Logo">
+      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft Logo">
+      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce Logo">
+      <img src="logos/xenium.webp" loading="lazy" alt="Xenium Logo">
+      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem Logo">
+      <img src="logos/mercury.webp" loading="lazy" alt="Mercury Logo">
+      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide Logo">
+      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla Logo">
     </div>
   </div>
 </section>
@@ -440,6 +568,52 @@
     📍 VKI Industrial Area, Jaipur, Rajasthan
   </p>
 </footer>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <span class="close-lightbox" role="button" aria-label="Close Lightbox">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged view">
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close-lightbox');
+    const galleryImages = document.querySelectorAll('.gallery img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        // UX: Carry over alt text for accessibility in lightbox
+        lightboxImg.alt = img.alt; 
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; 
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto'; 
+      setTimeout(() => { lightboxImg.src = ''; }, 300); 
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
