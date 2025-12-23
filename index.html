@@ -21,6 +21,11 @@
     }
 
     *{box-sizing:border-box;}
+    
+    html {
+      scroll-behavior: smooth; /* UX: Smooth scrolling for anchor links */
+    }
+
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
@@ -30,7 +35,7 @@
     }
 
     h1,h2,h3{color:var(--primary);margin-top:0;}
-    h1{font-size:52px;}
+    h1{font-size:52px; line-height: 1.1;}
     h2{font-size:34px;}
     h3{font-size:20px;margin-bottom:8px;}
     p{color:var(--muted);}
@@ -43,6 +48,7 @@
       padding:8px 10%;
       display:flex;
       justify-content:space-between;
+      flex-wrap: wrap; /* UX: Prevent text cutoff on small screens */
     }
 
     header{
@@ -50,7 +56,7 @@
       border-bottom:1px solid var(--border);
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:100; /* UX: Ensure header stays above content */
     }
 
     .nav{
@@ -60,15 +66,24 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      flex-wrap: wrap; /* UX: Allow wrapping on tablets */
+      gap: 20px;
     }
 
     .brand{
       font-size:26px;
       font-weight:700;
       color:var(--primary);
+      white-space: nowrap;
     }
 
-    .nav a{margin-left:24px;font-weight:500;}
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .nav-links a{font-weight:500;}
 
     .btn{
       background:var(--accent);
@@ -77,9 +92,17 @@
       border-radius:8px;
       font-weight:600;
       display:inline-block;
+      transition: background 0.2s; /* UX: Hover feedback */
     }
+    .btn:hover { background: #b02334; }
 
     section{padding:96px 10%;}
+
+    /* AUTOMATIC ALTERNATING BACKGROUNDS */
+    /* This automatically makes every 2nd section gray (Services, Gallery, Logos) */
+    section:nth-of-type(even) {
+      background-color: var(--bg);
+    }
 
     /* --- HERO SECTION FIXED --- */
     .hero {
@@ -91,19 +114,18 @@
       padding-bottom: 40px;
     }
 
-    /* Added this class to wrapp text content */
     .hero-content {
       flex: 1;
       min-width: 300px;
     }
 
-    /* Fixed Image Area */
     .hero-image {
       flex: 0 0 45%; 
       height: 450px; 
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      background-color: #f0f0f0; /* Perf: Placeholder color while loading */
     }
 
     .hero-image img {
@@ -121,7 +143,6 @@
       margin-top: 40px;
     }
 
-    /* Fixed Stat Cards */
     .stat-card {
       background: #ffffff;
       border-radius: 12px;
@@ -137,12 +158,11 @@
       color: var(--primary);
       line-height: 1.4;
     }
-    /* --------------------------- */
 
     /* GRID CARDS */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* UX: Increased min-width slightly */
       gap:32px;
       margin-top:48px;
     }
@@ -152,6 +172,10 @@
       padding:32px;
       border-radius:14px;
       box-shadow:0 6px 18px rgba(0,0,0,.06);
+      transition: transform 0.2s; /* UX: Micro-interaction */
+    }
+    .card:hover {
+        transform: translateY(-4px);
     }
 
     .card h3{
@@ -165,6 +189,7 @@
       object-fit:cover;
       border-radius:14px;
       transition:transform .2s ease;
+      background-color: #eee; /* Perf: Reduce perceived load time */
     }
 
     .gallery a:hover img{
@@ -197,6 +222,8 @@
     .logo-marquee {
       width: 100%;
       overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* UX: Fade edges */
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     .logo-track {
@@ -212,12 +239,8 @@
       object-fit: contain;
     }
     @keyframes scrollLogos {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     footer{
@@ -227,17 +250,29 @@
     }
 
     footer p{color:#e5e7eb;}
+    footer a:hover { color: #fff; text-decoration: underline; }
 
+    /* MOBILE OPTIMIZATIONS */
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
-        padding-top: 60px;
+        padding-top: 40px; /* UX: Less whitespace on mobile */
       }
-
       .hero-image {
         max-height: 360px;
         width: 100%;
       }
+      .nav {
+        justify-content: center;
+        padding: 16px;
+      }
+      .nav-links {
+        margin-top: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      h1 { font-size: 36px; } /* UX: Readable on mobile */
+      section { padding: 60px 6%; } /* UX: More screen real estate */
     }
     
     @media (max-width: 900px) {
@@ -250,6 +285,7 @@
       .stats-container {
         grid-template-columns: 1fr;
       }
+      .utility { justify-content: center; text-align: center; }
     }
   </style>
 </head>
@@ -263,7 +299,7 @@
 <header>
   <div class="nav">
     <a href="/" class="brand">Shyam Distributors</a>
-    <nav>
+    <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact" class="btn">Talk to the Team</a>
@@ -291,7 +327,8 @@
   </div>
 
   <div class="hero-image">
-    <img src="images/shyamtitleimage.webp" alt="Warehouse operations">
+    <!-- Eager loading for LCP element -->
+    <img src="images/newtitleimage.webp" alt="Warehouse operations" loading="eager">
   </div>
 </section>
 
@@ -335,18 +372,19 @@
 <section id="gallery" class="gallery">
   <h2>Our Facilities & Operations</h2>
   <div class="grid">
-    <a href="images/office/outside1.webp" target="_blank"><img src="images/office/outside1.webp"></a>
-    <a href="images/office/office1.webp" target="_blank"><img src="images/office/office1.webp"></a>
-    <a href="images/office/office2.webp" target="_blank"><img src="images/office/office2.webp"></a>
-    <a href="images/office/office3.webp" target="_blank"><img src="images/office/office3.webp"></a>
-    <a href="images/office/office_sh1.webp" target="_blank"><img src="images/office/office_sh1.webp"></a>
-    <a href="images/office/office5.webp" target="_blank"><img src="images/office/office5.webp"></a>
-    <a href="images/office/warehouse.webp" target="_blank"><img src="images/office/warehouse.webp"></a>
-    <a href="images/office/interior7.webp" target="_blank"><img src="images/office/interior7.webp"></a>
+    <!-- Perf: Added lazy loading to off-screen images -->
+    <a href="images/office/outside1.webp" target="_blank"><img src="images/office/outside1.webp" loading="lazy" alt="Office Exterior"></a>
+    <a href="images/office/office1.webp" target="_blank"><img src="images/office/office1.webp" loading="lazy" alt="Office Interior"></a>
+    <a href="images/office/office2.webp" target="_blank"><img src="images/office/office2.webp" loading="lazy" alt="Office Workspace"></a>
+    <a href="images/office/office3.webp" target="_blank"><img src="images/office/office3.webp" loading="lazy" alt="Office Corridor"></a>
+    <a href="images/office/office_sh1.webp" target="_blank"><img src="images/office/office_sh1.webp" loading="lazy" alt="Office Staff"></a>
+    <a href="images/office/office5.webp" target="_blank"><img src="images/office/office5.webp" loading="lazy" alt="Meeting Room"></a>
+    <a href="images/office/warehouse.webp" target="_blank"><img src="images/office/warehouse.webp" loading="lazy" alt="Warehouse Racks"></a>
+    <a href="images/office/interior7.webp" target="_blank"><img src="images/office/interior7.webp" loading="lazy" alt="Facility Interior"></a>
   </div>
 </section>
 
-<section style="background:#f8f9fb;">
+<section>
   <h2>What Our Clients Say</h2>
   <div class="grid">
      <div class="card testimonial">
@@ -374,20 +412,22 @@
   <h2>Trusted by Leading Manufacturers</h2>
    <div class="logo-marquee">
     <div class="logo-track">
-      <img src="logos/stovekfraft.webp">
-      <img src="logos/gujaratterce.webp">
-      <img src="logos/xenium.webp">
-      <img src="logos/Stadchem.png">
-      <img src="logos/mercury.webp">
-      <img src="logos/Innoglide.png">
-      <img src="logos/Cipla.webp">
-      <img src="logos/stovekfraft.webp">
-      <img src="logos/gujaratterce.webp">
-      <img src="logos/xenium.webp">
-      <img src="logos/Stadchem.png">
-      <img src="logos/mercury.webp">
-      <img src="logos/Innoglide.png">
-      <img src="logos/Cipla.webp">
+      <!-- Perf: Lazy load logos -->
+      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft">
+      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce">
+      <img src="logos/xenium.webp" loading="lazy" alt="Xenium">
+      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem">
+      <img src="logos/mercury.webp" loading="lazy" alt="Mercury">
+      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide">
+      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla">
+      <!-- Duplicates for marquee effect -->
+      <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft">
+      <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce">
+      <img src="logos/xenium.webp" loading="lazy" alt="Xenium">
+      <img src="logos/Stadchem.png" loading="lazy" alt="Stadchem">
+      <img src="logos/mercury.webp" loading="lazy" alt="Mercury">
+      <img src="logos/Innoglide.png" loading="lazy" alt="Innoglide">
+      <img src="logos/Cipla.webp" loading="lazy" alt="Cipla">
     </div>
   </div>
 </section>
