@@ -157,6 +157,7 @@
         margin-bottom: 20px; /* Space between image and name */
         margin-left: auto;
         margin-right: auto;
+        background-color: #eee;
     }
 
     .leader-avatar img {
@@ -207,13 +208,38 @@
     footer p{color:#e5e7eb;}
     footer a:hover { color: #fff; text-decoration: underline; }
 
+    /* --- MOBILE OPTIMIZATION FIXES START HERE --- */
     @media (max-width: 900px) {
+        /* Fix the header alignment */
+        .nav { 
+            flex-direction: column; /* Stack logo on top of menu */
+            justify-content: center; 
+            gap: 15px; /* Reduce gap between logo and menu */
+            padding: 15px 5%;
+        }
+
+        /* Adjust the links container to flow nicely */
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            gap: 15px; /* Reduce gap between text links */
+        }
+        
+        /* Fix the button size and alignment */
+        .btn {
+            padding: 10px 20px; /* Smaller padding for mobile */
+            font-size: 14px;    /* Slightly smaller text */
+            margin-top: 5px;    /* Separate it slightly from text links if wrapped */
+            width: auto;
+        }
+
+        /* Existing styles for leaders section */
         .leaders-section { flex-direction: column; text-align: center; }
-        /* Smaller circles on mobile/tablet to fit better */
         .leader-avatar { width: 220px; height: 220px; }
         .leader-profile { max-width: 100%; }
-        .nav { justify-content: center; }
     }
+    /* --- MOBILE OPTIMIZATION END --- */
   </style>
 </head>
 
@@ -255,20 +281,20 @@
       <div class="leader-profile">
         <div class="leader-avatar">
           <!-- Placeholder 1 -->
-          <img src="images/Birbal.webp" alt="Birbal Gupta">
+          <img src="https://placehold.co/400x400/0b1e3c/ffffff?text=Birbal+Gupta" alt="Birbal Gupta">
         </div>
         <h3 class="leader-name">Birbal Gupta</h3>
-        <p class="leader-title">Founder and CEO</p>
+     <!--   <p class="leader-title">Founder and CEO</p> -->
       </div>
 
       <!-- Leader Profile 2 -->
       <div class="leader-profile">
         <div class="leader-avatar">
           <!-- Placeholder 2 -->
-          <img src="images/Lokesh.webp" alt="Lokesh Agarwal">
+          <img src="https://placehold.co/400x400/0b1e3c/ffffff?text=Lokesh+Agarwal" alt="Lokesh Agarwal">
         </div>
         <h3 class="leader-name">Lokesh Agarwal</h3>
-        <p class="leader-title">Director</p>
+     <!--      <p class="leader-title">Director</p> -->
       </div>
 
     </div>
