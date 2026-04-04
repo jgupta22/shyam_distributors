@@ -208,6 +208,76 @@
     footer p{color:#e5e7eb;}
     footer a:hover { color: #fff; text-decoration: underline; }
 
+    /* FAQ SECTION STYLES */
+.faq-container {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  background: var(--card);
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.faq-question {
+  padding: 18px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  color: var(--primary);
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 20px 20px 20px;
+  color: var(--muted);
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-answer ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.faq-answer li {
+  margin-bottom: 6px;
+}
+    
     /* --- MOBILE OPTIMIZATION FIXES START HERE --- */
     @media (max-width: 900px) {
         /* Fix the header alignment */
@@ -440,6 +510,15 @@
     📍 <a href="https://share.google/SjRj8grlSTj7tWLac" target="_blank" style="text-decoration: underline;">VKI Industrial Area, Jaipur, Rajasthan (View on Maps)</a>
   </p>
 </footer>
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
 
+  faqItems.forEach(item => {
+    item.querySelector(".faq-question").addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
+</script>
+  
 </body>
 </html>
