@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
 <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V26YKC43C7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -105,6 +105,19 @@
       line-height:1.6;
     }
 
+    /* Accessibility Class */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     h1,h2,h3{color:var(--primary);margin-top:0;}
     h1{font-size:52px; line-height: 1.1;}
     h2{font-size:34px;}
@@ -174,6 +187,20 @@
     }
     .btn:hover { background: #b02334; }
 
+    .btn-outline {
+      padding: 14px 26px;
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
     section{padding:96px 10%;}
 
     /* AUTOMATIC ALTERNATING BACKGROUNDS */
@@ -195,6 +222,13 @@
     .hero-content {
       flex: 1;
       min-width: 300px;
+    }
+
+    .hero-cta-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .hero-image {
@@ -392,7 +426,11 @@
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
-
+    .logo {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
     footer{
       background:var(--primary);
       color:#fff;
@@ -401,42 +439,99 @@
 
     footer p{color:#e5e7eb;}
     footer a:hover { color: #fff; text-decoration: underline; }
+.contact-form-container {
+  max-width: 600px;
+}
 
-    /* MOBILE OPTIMIZATIONS */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        padding-top: 40px;
-      }
-      .hero-image {
-        max-height: 360px;
-        width: 100%;
-      }
-      .nav {
-        justify-content: center;
-        padding: 16px;
-      }
-      .nav-links {
-        margin-top: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      h1 { font-size: 36px; }
-      section { padding: 60px 6%; }
-    }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #b02334;
+}
     
-    @media (max-width: 900px) {
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+    /* MOBILE OPTIMIZATIONS */
+   @media (max-width: 900px) {
+
+  /* Header fix */
+  header {
+    position: static;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .hero-image {
+    max-height: 360px;
+    width: 100%;
+  }
+
+  /* Navigation */
+  .nav {
+    justify-content: center;
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-links .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  /* Stats */
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Typography & spacing */
+  h1 { font-size: 36px; }
+  section { padding: 60px 6%; }
+}
 
     @media (max-width: 500px) {
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-      .utility { justify-content: center; text-align: center; }
-    }
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  .utility {
+    justify-content: center;
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -448,16 +543,19 @@
 
 <header>
   <div class="nav">
-    <a href="/" class="brand">Shyam Distributors</a>
+    <a href="/" class="brand">
+  <img src="logos/shyam_logo.webp" alt="Shyam Distributors Logo" class="logo">
+</a>
     <nav class="nav-links" aria-label="Main Navigation">
       <a href="about.html">About Us</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact" class="btn" aria-label="Contact the Team">Talk to the Team</a>
+      <a href="#contact" class="btn">Contact Us</a>
     </nav>
   </div>
 </header>
 
+<main>
 <section class="hero">
   <div class="hero-content">
     <!-- SEO: Strong H1 targeting "C&F", "Stockist" and location -->
@@ -467,7 +565,12 @@
       we manage pharmaceutical, kitchen appliance, and industrial distribution across the state.
     </p>
 
-    <a href="#contact" class="btn" aria-label="Contact the Team">Talk to the Team</a>
+   <div class="hero-cta-group">
+  <a href="#contact" class="btn">Request a Quote</a>
+  <a href="#contact" class="btn-outline">
+    Talk to the Team
+  </a>
+</div>
 
     <div class="stats-container">
       <div class="stat-card">65,000 sq ft<br/>Infrastructure</div>
@@ -589,6 +692,7 @@
    <div class="logo-marquee">
     <div class="logo-track">
       <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft Logo">
+      <img src="logos/philips.webp" loading="lazy" alt="Philips Logo">
       <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce Logo">
       <img src="logos/xenium.webp" loading="lazy" alt="Xenium Logo">
       <img src="logos/Stadchem.webp" loading="lazy" alt="Stadchem Logo">
@@ -597,6 +701,7 @@
       <img src="logos/stanwell.webp" loading="lazy" alt="Stanwell Logo">
       <img src="logos/vivimed.webp" loading="lazy" alt="Vivimed Logo">
       <img src="logos/stovekfraft.webp" loading="lazy" alt="Stovekraft Logo">
+      <img src="logos/philips.webp" loading="lazy" alt="Philips Logo">
       <img src="logos/gujaratterce.webp" loading="lazy" alt="Gujarat Terce Logo">
       <img src="logos/xenium.webp" loading="lazy" alt="Xenium Logo">
       <img src="logos/Stadchem.webp" loading="lazy" alt="Stadchem Logo">
@@ -608,13 +713,38 @@
   </div>
 </section>
 
-<footer id="contact">
+<section id="contact">
+  <div class="contact-form-container">
+  <h3>Send Us an Inquiry</h3>
+
+  <form action="https://formspree.io/f/maqvyzge" method="POST" class="contact-form">
+    
+    <label for="name" class="sr-only">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+    
+    <label for="email" class="sr-only">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <label for="company" class="sr-only">Company Name</label>
+    <input type="text" id="company" name="company" placeholder="Company Name">
+
+    <label for="message" class="sr-only">Your Requirement</label>
+    <textarea id="message" name="message" placeholder="Tell us about your requirement" rows="5" required></textarea>
+
+    <button type="submit">Submit Inquiry</button>
+
+  </form>
+</div>
+</section>
+</main>
+
+<footer>
   <h2>Contact Us</h2>
   <p>
     Looking for a partner in Rajasthan?<br/>
     📞 <a href="tel:+919414084999" class="phone-link">+91-94140-84999</a> | <a href="tel:+919460239259" class="phone-link">+91-9460239259</a> <br/>
     ✉️ shyam_distributor@yahoo.co.in<br/>
-    📍 <a href="https://share.google/SjRj8grlSTj7tWLac" target="_blank" style="text-decoration: underline;">VKI Industrial Area, Jaipur, Rajasthan (View on Maps)</a>
+    📍 <a href="https://share.google/SjRj8grlSTj7tWLac" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">VKI Industrial Area, Jaipur, Rajasthan (View on Maps)</a>
   </p>
 </footer>
 
